@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="750px"
+	 height="750px" viewBox="0 0 750 750" enable-background="new 0 0 750 750" xml:space="preserve">
+<g id="inner_kompass">
+	<g id="motte">
+		<path id="motte_bg1" fill="#131313" d="M322.8,469.56l52.2-31.32l51.66,31.63C460.23,451.55,483,415.93,483,375c0-59.65-48.35-108-108-108s-108,48.35-108,108C267,415.71,289.53,451.16,322.8,469.56z"/>
+		<polygon id="motte_bg2" fill="#212121" points="325.33,466.67 375,332.17 423.67,466.67 375,438.24"/>
+		<path id="motte_outline" fill="#818181" d="M375,264.5c-60.93,0-110.5,49.57-110.5,110.5c0,40.2,21.88,77.27,57.09,96.75
+			l1.24-0.31l52.15-31.3l51.62,31.6l1.25,0.32c35.56-19.4,57.64-56.59,57.64-97.06C485.5,314.07,435.93,264.5,375,264.5z
+			 M327.12,464.16l47.86-128.64l46.33,128.27l-46.3-27.45L327.12,464.16z M426.7,466.98l-51.68-140.17l-52.24,139.88
+			c-32.9-18.78-53.28-53.78-53.28-91.69c0-58.17,47.33-105.5,105.5-105.5S480.5,316.83,480.5,375
+			C480.5,413.16,459.92,448.28,426.7,466.98z"/>
+	</g>
+	<circle id="middle_circle" fill="none" stroke="#DADADA" stroke-width="4" stroke-miterlimit="10" cx="375" cy="375" r="195.5"/>
+	<polygon id="triangle" fill="#FF0000" points="351,183 375,155 399,183"/>
+</g>
+</svg>

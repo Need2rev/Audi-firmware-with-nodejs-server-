@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>UI-Audi</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <script>
+    /**
+     * This can be used by the eso system team in IN for startup optimization / testing.
+     * Renicing of the browser processes will be delayed by this amount of milliseconds.
+     */
+    window.reniceDelay = 600; // in ms
+
+    /**
+     * Recovers the UI in a usable state when page is reloaded or browser has crashed and restarted.
+     *
+     * When UI gets reloaded with a deep URL into an app context it might fail or leave the application in an
+     * unusable state.
+     * To prevent these scenarios the app will be "recovered" to its initial entry URL. This allows the
+     * application to at least restore the last active app context via its last mode handling.
+     */
+    function recoverUiOnReload() {
+      const appEntryPoints = ['#/main', '#/fpk'];
+      const recoveredAppEntry = appEntryPoints.find(entryPoint => location.hash.includes(entryPoint) && location.hash !== entryPoint);
+
+      if (recoveredAppEntry) {
+        console.log('recoverUiOnReload: Reset hash from "' + location.hash + '" to "' + recoveredAppEntry + '"');
+        // Setting "location.hash" instead of "location.href" prevents an additional page reload.
+        location.hash = recoveredAppEntry;
+      }
+    }
+
+    recoverUiOnReload();
+
+    // Remember time of ui start for startup measurements.
+    // Can be looked up in the blue engineering menu for example.
+    window.uiStartTime = performance.now();
+
+    console.time('[Startup] main.ts');
+    console.time('[Startup] AppComponent initialized');
+    console.time('[Startup] first screen rendered');
+    console.time('[Startup] window.onload');
+  </script>
+<link rel="stylesheet" href="styles.af7072ae6f64de7f871c.css"></head>
+<body>
+  <au3-root>Loading...</au3-root>
+<script src="runtime.86458c9eb84fafd07f43.js" defer></script><script src="polyfills.01277dd26c3a4e28071d.js" defer></script><script src="vendor.34f22af5ffbffad14cd9.js" defer></script><script src="main.17a1455a44197c571024.js" defer></script></body>
+</html>
