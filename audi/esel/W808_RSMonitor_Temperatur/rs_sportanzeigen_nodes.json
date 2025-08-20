@@ -1,0 +1,364 @@
+{
+  "nodes": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "name": "rs_car_mesh",
+              "visibility": true
+            },
+            {
+              "children": [
+                {
+                  "name": "break_rear_left",
+                  "visibility": true
+                }
+              ],
+              "name": "rs_break_rear_left",
+              "visibility": true
+            },
+            {
+              "children": [
+                {
+                  "name": "break_rear_right",
+                  "visibility": true
+                }
+              ],
+              "name": "rs_break_rear_right",
+              "visibility": true
+            },
+            {
+              "children": [
+                {
+                  "name": "drivetrain",
+                  "visibility": true
+                }
+              ],
+              "name": "rs_drivetrain",
+              "visibility": true
+            },
+            {
+              "name": "rs_engine_mesh",
+              "visibility": true
+            },
+            {
+              "name": "rs_wheel_mesh",
+              "visibility": true
+            },
+            {
+              "children": [
+                {
+                  "name": "break_front_left",
+                  "visibility": true
+                }
+              ],
+              "name": "rs_break_front_left",
+              "visibility": true
+            },
+            {
+              "children": [
+                {
+                  "name": "engine",
+                  "visibility": true
+                }
+              ],
+              "name": "rs_engine",
+              "visibility": true
+            },
+            {
+              "children": [
+                {
+                  "name": "motor",
+                  "visibility": true
+                }
+              ],
+              "name": "rs_motor",
+              "visibility": true
+            },
+            {
+              "name": "rs_radiator_mesh",
+              "visibility": true
+            },
+            {
+              "children": [
+                {
+                  "name": "radiator",
+                  "visibility": true
+                }
+              ],
+              "name": "rs_radiator",
+              "visibility": true
+            }
+          ],
+          "name": "rs_temperaturanzeige_control_node",
+          "visibility": true
+        }
+      ],
+      "name": "Scenegraph Root Node",
+      "visibility": true
+    }
+  ],
+  "resources": {
+    "expressions": [
+      {
+        "creationTime": "2017-11-30T14:45:35Z",
+        "exportState": "2",
+        "inputs": {
+          "rs_break_front_left_state": {
+            "range": [
+              0,
+              5
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "int",
+            "value": "5"
+          },
+          "rs_break_rear_left_state": {
+            "range": [
+              0,
+              5
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "int",
+            "value": "5"
+          },
+          "rs_break_rear_right_state": {
+            "range": [
+              0,
+              5
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "int",
+            "value": "4"
+          },
+          "rs_drivetrain_state": {
+            "range": [
+              0,
+              5
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "int",
+            "value": "2"
+          },
+          "rs_engine_state": {
+            "range": [
+              0,
+              5
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "int",
+            "value": "2"
+          },
+          "rs_motor_state": {
+            "range": [
+              0,
+              5
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "int",
+            "value": "5"
+          },
+          "rs_radiator_state": {
+            "range": [
+              0,
+              5
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "int",
+            "value": "4"
+          }
+        },
+        "modificationTime": "2018-11-08T08:46:08Z",
+        "name": "sportanzeigen_controls",
+        "outputs": {},
+        "rs_break_front_left_state": "5",
+        "rs_break_rear_left_state": "5",
+        "rs_break_rear_right_state": "4",
+        "rs_drivetrain_state": "2",
+        "rs_engine_state": "2",
+        "rs_motor_state": "5",
+        "rs_radiator_state": "4",
+        "script_language": "Esel",
+        "tags": [
+          "interface"
+        ],
+        "uri": "Expressions/sportanzeigen_controls.esl"
+      }
+    ],
+    "material instances": [
+      {
+        "Fragment Shader URI": "Shaders/common_textured.frag.glsl",
+        "Texture": "<Texture 'sportanzeigen_car_tex'>",
+        "Vertex Shader URI": "Shaders/common_textured.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2017-11-23T09:06:48Z",
+        "exportState": "2",
+        "modificationTime": "2018-10-16T08:04:04Z",
+        "name": "common_textured_instance"
+      },
+      {
+        "Fragment Shader URI": "Shaders/temperatur_sportanzeige.frag.glsl",
+        "Texture": "<Texture 'sportanzeigen_gray_atlas_tex'>",
+        "Texture01": "<Texture 'sportanzeigen_blue_atlas_tex'>",
+        "Texture02": "<Texture 'sportanzeigen_yellow_atlas_tex'>",
+        "Texture03": "<Texture 'sportanzeigen_red_atlas_tex'>",
+        "Texture04": "<Texture 'sportanzeigen_green_atlas_tex'>",
+        "Vertex Shader URI": "Shaders/temperatur_sportanzeige.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2018-10-16T07:41:36Z",
+        "exportState": "2",
+        "modificationTime": "2018-11-08T08:43:20Z",
+        "name": "temperatur_sportanzeige_material",
+        "state_colorize": "0",
+        "state_colorize_oldFLOAT": "5.0"
+      }
+    ],
+    "textures": [
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-10-16T08:03:02Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "206",
+        "modificationTime": "2018-10-16T08:03:12Z",
+        "name": "sportanzeigen_radiator_tex",
+        "preview": "None",
+        "uri": "Images/sportanzeigen_radiator.png",
+        "width": "147",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-10-15T11:57:22Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "292",
+        "modificationTime": "2018-10-16T05:48:33Z",
+        "name": "sportanzeigen_red_atlas_tex",
+        "preview": "None",
+        "uri": "Images/sportanzeigen_red_atlas.png",
+        "width": "415",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-10-15T11:57:22Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "292",
+        "modificationTime": "2018-10-16T05:48:33Z",
+        "name": "sportanzeigen_blue_atlas_tex",
+        "preview": "None",
+        "uri": "Images/sportanzeigen_blue_atlas.png",
+        "width": "415",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-10-15T11:57:22Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "292",
+        "modificationTime": "2018-10-16T05:48:33Z",
+        "name": "sportanzeigen_yellow_atlas_tex",
+        "preview": "None",
+        "uri": "Images/sportanzeigen_yellow_atlas.png",
+        "width": "415",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-10-15T11:57:22Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "292",
+        "modificationTime": "2018-10-16T05:48:33Z",
+        "name": "sportanzeigen_green_atlas_tex",
+        "preview": "None",
+        "uri": "Images/sportanzeigen_green_atlas.png",
+        "width": "415",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-10-16T08:14:45Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "171",
+        "modificationTime": "2018-10-16T08:14:50Z",
+        "name": "sportanzeigen_front_left_wheel_tex",
+        "preview": "None",
+        "uri": "Images/sportanzeigen_front_left_wheel.png",
+        "width": "171",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-10-15T11:57:22Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "417",
+        "modificationTime": "2018-10-16T05:48:33Z",
+        "name": "sportanzeigen_car_tex",
+        "preview": "None",
+        "uri": "Images/sportanzeigen_car.png",
+        "width": "804",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-10-15T11:57:22Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "292",
+        "modificationTime": "2018-10-16T05:48:33Z",
+        "name": "sportanzeigen_gray_atlas_tex",
+        "preview": "None",
+        "uri": "Images/sportanzeigen_gray_atlas.png",
+        "width": "415",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-10-16T08:03:02Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "222",
+        "modificationTime": "2018-10-16T08:03:09Z",
+        "name": "sportanzeigen_engine_tex",
+        "preview": "None",
+        "uri": "Images/sportanzeigen_engine.png",
+        "width": "196",
+        "wrap mode": "1"
+      }
+    ]
+  },
+  "version_info": {
+    "EngineBuildString": "windows_64bit_release_for_host__v2.115_0",
+    "StudioVersionString": "2.24.10-1017"
+  }
+}

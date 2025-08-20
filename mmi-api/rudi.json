@@ -1,0 +1,35 @@
+{
+    "appManifest": {
+        "apps": [
+            {
+                "appName": "media",
+                "isPreInstalled": true,
+                "url": "./media",
+                "appType": "native",
+                "isHmiControlled": false
+            },
+            {
+                "appName": "phone",
+                "isPreInstalled": true,
+                "url": "./phone",
+                "appType": "native",
+                "isHmiControlled": false
+            },
+            {
+                "appName": "navi",
+                "isPreInstalled": true,
+                "url": "./navi",
+                "appType": "native",
+                "isHmiControlled": false
+            },
+            {
+                "appName": "addressbook",
+                "isPreInstalled": true,
+                "url": "./addressbook",
+                "appType": "native",
+                "isHmiControlled": false
+            }
+        ],
+        "version": "1.0.0"
+    }
+}

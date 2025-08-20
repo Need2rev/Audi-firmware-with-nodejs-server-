@@ -1,0 +1,1292 @@
+{
+  "nodes": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "name": "gyro_pitch",
+              "visibility": true
+            },
+            {
+              "name": "fbo_textur",
+              "visibility": true
+            }
+          ],
+          "name": "gyro_scaling_med",
+          "visibility": true
+        },
+        {
+          "children": [
+            {
+              "name": "gyro_roll_label",
+              "visibility": true
+            }
+          ],
+          "name": "gyro_roll_med_node",
+          "visibility": true
+        },
+        {
+          "name": "gyro_pitch_label",
+          "visibility": true
+        }
+      ],
+      "name": "Root",
+      "visibility": true
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "materials": [
+                            "gyro_disk_Material"
+                          ],
+                          "meshes": {
+                            "mesh_0": "disk_top_back"
+                          },
+                          "name": "disk_bot_back",
+                          "node_type": "MeshNode",
+                          "visibility": true
+                        },
+                        {
+                          "materials": [
+                            "gyro_disk_Material"
+                          ],
+                          "meshes": {
+                            "mesh_0": "disk_top_side_back"
+                          },
+                          "name": "disk_top_side_back",
+                          "node_type": "MeshNode",
+                          "visibility": true
+                        },
+                        {
+                          "materials": [
+                            "gyro_disk_Material"
+                          ],
+                          "meshes": {
+                            "mesh_0": "disk_top_side_back"
+                          },
+                          "name": "disk_bot_side_back",
+                          "node_type": "MeshNode",
+                          "visibility": true
+                        },
+                        {
+                          "materials": [
+                            "gyro_disk_Material"
+                          ],
+                          "meshes": {
+                            "mesh_0": "disk_top_back"
+                          },
+                          "name": "disk_top_back",
+                          "node_type": "MeshNode",
+                          "visibility": true
+                        }
+                      ],
+                      "name": "gyro_back_plate_group",
+                      "node_type": "Node",
+                      "visibility": true
+                    }
+                  ],
+                  "name": "gyro_back_plate_pivot",
+                  "node_type": "Node",
+                  "visibility": true
+                }
+              ],
+              "name": "gyro_back_plate",
+              "node_type": "Node",
+              "visibility": true
+            },
+            {
+              "children": [
+                {
+                  "materials": [
+                    "gyro_roll_Material"
+                  ],
+                  "meshes": {
+                    "mesh_0": "roll_export"
+                  },
+                  "name": "gyro_roll",
+                  "node_type": "MeshNode",
+                  "visibility": true
+                }
+              ],
+              "name": "gyro_roll_node",
+              "node_type": "Node",
+              "visibility": true
+            }
+          ],
+          "name": "gyro_back",
+          "node_type": "Node",
+          "visibility": true
+        }
+      ],
+      "name": "FBO_back",
+      "node_type": "Node",
+      "visibility": true
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "materials": [
+                            "gyro_disk_Material"
+                          ],
+                          "meshes": {
+                            "mesh_0": "disk_top_back_2"
+                          },
+                          "name": "disk_bot_back_1",
+                          "node_type": "MeshNode",
+                          "visibility": true
+                        },
+                        {
+                          "materials": [
+                            "gyro_disk_Material"
+                          ],
+                          "meshes": {
+                            "mesh_0": "disk_top_front"
+                          },
+                          "name": "disk_bot_front",
+                          "node_type": "MeshNode",
+                          "visibility": true
+                        },
+                        {
+                          "materials": [
+                            "gyro_disk_Material"
+                          ],
+                          "meshes": {
+                            "mesh_0": "disk_top_front"
+                          },
+                          "name": "disk_top_front",
+                          "node_type": "MeshNode",
+                          "visibility": true
+                        },
+                        {
+                          "materials": [
+                            "gyro_disk_Material"
+                          ],
+                          "meshes": {
+                            "mesh_0": "disk_top_side_front"
+                          },
+                          "name": "disk_top_side_front",
+                          "node_type": "MeshNode",
+                          "visibility": true
+                        },
+                        {
+                          "materials": [
+                            "gyro_disk_Material"
+                          ],
+                          "meshes": {
+                            "mesh_0": "disk_top_side_front"
+                          },
+                          "name": "disk_bot_side_front",
+                          "node_type": "MeshNode",
+                          "visibility": true
+                        }
+                      ],
+                      "name": "gyro_front_plate_group",
+                      "node_type": "Node",
+                      "visibility": true
+                    }
+                  ],
+                  "name": "gyro_front_plate_pivot",
+                  "node_type": "Node",
+                  "visibility": true
+                }
+              ],
+              "name": "gyro_front_plate",
+              "node_type": "Node",
+              "visibility": true
+            }
+          ],
+          "name": "gyro_front",
+          "node_type": "Node",
+          "visibility": true
+        }
+      ],
+      "name": "FBO_front",
+      "node_type": "Node",
+      "visibility": true
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "materials": [
+                                "Carpaint_Material",
+                                "Rubber_Material",
+                                "Carpaint_Material",
+                                "Chrome_Material",
+                                "Rearlights_RGB_Material",
+                                "Carpaint_Material"
+                              ],
+                              "meshes": {
+                                "mesh_0": "AU316_2_Exterior"
+                              },
+                              "name": "Exterior",
+                              "node_type": "MeshNode",
+                              "visibility": true
+                            },
+                            {
+                              "materials": [
+                                "Rubber_Material",
+                                "Plastic_Material"
+                              ],
+                              "meshes": {
+                                "mesh_0": "AU316_2_Interior"
+                              },
+                              "name": "Interior",
+                              "node_type": "MeshNode",
+                              "visibility": true
+                            },
+                            {
+                              "materials": [
+                                "Rubber_Material",
+                                "Plastic_Material"
+                              ],
+                              "meshes": {
+                                "mesh_0": "AU316_2_Interior_rhd"
+                              },
+                              "name": "Interior_rhd",
+                              "node_type": "MeshNode",
+                              "visibility": false
+                            },
+                            {
+                              "materials": [
+                                "glass_Material"
+                              ],
+                              "meshes": {
+                                "mesh_0": "AU316_2_Glass"
+                              },
+                              "name": "Glass",
+                              "node_type": "MeshNode",
+                              "visibility": true
+                            },
+                            {
+                              "children": [
+                                {
+                                  "children": [
+                                    {
+                                      "materials": [
+                                        "Rubber_Material",
+                                        "Chrome_Material",
+                                        "Chrome_Material"
+                                      ],
+                                      "meshes": {
+                                        "mesh_0": "AU316_2_Tyre_RL"
+                                      },
+                                      "name": "Tyre_RL",
+                                      "node_type": "MeshNode",
+                                      "visibility": true
+                                    }
+                                  ],
+                                  "name": "W_RL_Steering",
+                                  "node_type": "Node",
+                                  "visibility": true
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "materials": [
+                                        "Rubber_Material",
+                                        "Chrome_Material",
+                                        "Chrome_Material"
+                                      ],
+                                      "meshes": {
+                                        "mesh_0": "AU316_2_Tyre_RR"
+                                      },
+                                      "name": "Tyre_RR",
+                                      "node_type": "MeshNode",
+                                      "visibility": true
+                                    }
+                                  ],
+                                  "name": "W_RR_Steering",
+                                  "node_type": "Node",
+                                  "visibility": true
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "materials": [
+                                        "Rubber_Material",
+                                        "Chrome_Material",
+                                        "Chrome_Material"
+                                      ],
+                                      "meshes": {
+                                        "mesh_0": "AU316_2_Tyre_FR"
+                                      },
+                                      "name": "Tyre_FR",
+                                      "node_type": "MeshNode",
+                                      "visibility": true
+                                    }
+                                  ],
+                                  "name": "W_FR_Steering",
+                                  "node_type": "Node",
+                                  "visibility": true
+                                },
+                                {
+                                  "children": [
+                                    {
+                                      "materials": [
+                                        "Rubber_Material",
+                                        "Chrome_Material",
+                                        "Chrome_Material"
+                                      ],
+                                      "meshes": {
+                                        "mesh_0": "AU316_2_Tyre_FL"
+                                      },
+                                      "name": "Tyre_FL",
+                                      "node_type": "MeshNode",
+                                      "visibility": true
+                                    }
+                                  ],
+                                  "name": "W_FL_Steering",
+                                  "node_type": "Node",
+                                  "visibility": true
+                                }
+                              ],
+                              "name": "Wheels",
+                              "node_type": "Node",
+                              "visibility": true
+                            }
+                          ],
+                          "name": "RT40_FPK_AU316_2_Q4_etron",
+                          "node_type": "Node",
+                          "visibility": true
+                        }
+                      ],
+                      "name": "gyro_driveselect_group",
+                      "node_type": "Node",
+                      "visibility": true
+                    }
+                  ],
+                  "name": "gyro_car_pivot",
+                  "node_type": "Node",
+                  "visibility": true
+                }
+              ],
+              "name": "gyro_car_node",
+              "node_type": "Node",
+              "visibility": true
+            }
+          ],
+          "name": "gyro_car",
+          "node_type": "Node",
+          "visibility": true
+        },
+        {
+          "name": "car_light_00",
+          "node_type": "Node",
+          "visibility": true
+        },
+        {
+          "name": "car_light_01",
+          "node_type": "Node",
+          "visibility": true
+        }
+      ],
+      "name": "FBO_z",
+      "node_type": "Node",
+      "visibility": true
+    }
+  ],
+  "resources": {
+    "expressions": [
+      {
+        "Ambient_oldFLOAT4": "[0.0, 0.0, 0.0, 0.0]",
+        "CubemapColor_oldFLOAT3": "[0.0, 0.0, 0.0]",
+        "CubemapColor_oldFLOAT4": "[0.0, 0.0, 0.0, 0.0]",
+        "Diffuse_oldFLOAT4": "[0.0, 0.0, 0.0, 0.0]",
+        "PointLightAttenuation_0": "[0.452, 0.0, 0.0]",
+        "PointLightAttenuation_1": "[0.774, 0.0, 0.0]",
+        "PointLightAttenuation_2": "[0.0, 0.0, 0.0]",
+        "PointLightColor_0": "[0.66, 0.66, 0.66, 1.0]",
+        "PointLightColor_1": "[0.66, 0.66, 0.66, 1.0]",
+        "PointLightColor_2": "[0.0, 0.0, 0.0, 0.0]",
+        "PointLightPosition_0": "[1.700000047683716, -10.1899995803833, 11.17000007629395]",
+        "PointLightPosition_1": "[-1.039999961853027, -2.839999914169312, -9.770000457763672]",
+        "PointLightPosition_2": "[0.0, 0.0, 0.0]",
+        "ReflectionsAdjustment_oldFLOAT3": "[0.0, 0.0, 0.0]",
+        "SpecularColor_oldFLOAT4": "[0.0, 0.0, 0.0, 0.0]",
+        "SpecularExponent_oldFLOAT": "0.0",
+        "creationTime": "2019-07-24T11:08:47Z",
+        "exportState": "2",
+        "input": "0.0",
+        "inputs": {
+          "Ambient_oldFLOAT4": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "Vec4",
+            "value": "[0.0, 0.0, 0.0, 0.0]"
+          },
+          "CubemapColor_oldFLOAT3": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "Vec3",
+            "value": "[0.0, 0.0, 0.0]"
+          },
+          "CubemapColor_oldFLOAT4": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "Vec4",
+            "value": "[0.0, 0.0, 0.0, 0.0]"
+          },
+          "Diffuse_oldFLOAT4": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "Vec4",
+            "value": "[0.0, 0.0, 0.0, 0.0]"
+          },
+          "PointLightAttenuation_0": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "Vec3",
+            "value": "[0.452, 0.0, 0.0]"
+          },
+          "PointLightAttenuation_1": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "Vec3",
+            "value": "[0.774, 0.0, 0.0]"
+          },
+          "PointLightAttenuation_2": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "Vec3",
+            "value": "[0.0, 0.0, 0.0]"
+          },
+          "PointLightColor_0": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "Vec4",
+            "value": "[0.66, 0.66, 0.66, 1.0]"
+          },
+          "PointLightColor_1": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "Vec4",
+            "value": "[0.66, 0.66, 0.66, 1.0]"
+          },
+          "PointLightColor_2": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "Vec4",
+            "value": "[0.0, 0.0, 0.0, 0.0]"
+          },
+          "PointLightPosition_0": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "Vec3",
+            "value": "[1.700000047683716, -10.1899995803833, 11.17000007629395]"
+          },
+          "PointLightPosition_1": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "Vec3",
+            "value": "[-1.039999961853027, -2.839999914169312, -9.770000457763672]"
+          },
+          "PointLightPosition_2": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "Vec3",
+            "value": "[0.0, 0.0, 0.0]"
+          },
+          "ReflectionsAdjustment_oldFLOAT3": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "Vec3",
+            "value": "[0.0, 0.0, 0.0]"
+          },
+          "SpecularColor_oldFLOAT4": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "Vec4",
+            "value": "[0.0, 0.0, 0.0, 0.0]"
+          },
+          "SpecularExponent_oldFLOAT": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "float",
+            "value": "0.0"
+          },
+          "input": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "float",
+            "value": "0.0"
+          }
+        },
+        "modificationTime": "2020-05-18T06:23:50Z",
+        "name": "gyro_lights",
+        "outputs": {
+          "output": {
+            "value": "0.0"
+          }
+        },
+        "script_language": "Esel",
+        "uri": "Expressions/gyro_lights.esl"
+      },
+      {
+        "car_rhd": "0",
+        "car_variant": "31627",
+        "creationTime": "2019-07-24T11:08:47Z",
+        "exportState": "2",
+        "gyro_hardWarningColor": "[0.87, 0.125, 0.125, 1.0]",
+        "gyro_med": "0.0",
+        "gyro_pitch": "0.0",
+        "gyro_pitch_hardWarning": "15.0",
+        "gyro_pitch_softWarning": "5.0",
+        "gyro_pitch_warningRange": "20.0",
+        "gyro_roll": "0.0",
+        "gyro_roll_hardWarning": "25.0",
+        "gyro_roll_softWarning": "15.0",
+        "gyro_roll_warningRange": "35.0",
+        "gyro_softWarningColor": "[0.902, 0.721, 0.09, 1.0]",
+        "gyro_state": "1.0",
+        "inputs": {
+          "car_rhd": {
+            "range": [
+              0,
+              1
+            ],
+            "type": "int",
+            "value": "0"
+          },
+          "car_variant": {
+            "range": [
+              0,
+              5
+            ],
+            "type": "int",
+            "value": "31627"
+          },
+          "gyro_hardWarningColor": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "Vec4",
+            "value": "[0.87, 0.125, 0.125, 1.0]"
+          },
+          "gyro_med": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "float",
+            "value": "0.0"
+          },
+          "gyro_pitch": {
+            "range": [
+              -90.0,
+              90.0
+            ],
+            "type": "float",
+            "value": "0.0"
+          },
+          "gyro_pitch_hardWarning": {
+            "range": [
+              0.0,
+              90.0
+            ],
+            "type": "float",
+            "value": "15.0"
+          },
+          "gyro_pitch_softWarning": {
+            "range": [
+              0.0,
+              90.0
+            ],
+            "type": "float",
+            "value": "5.0"
+          },
+          "gyro_pitch_warningRange": {
+            "range": [
+              0.0,
+              90.0
+            ],
+            "type": "float",
+            "value": "20.0"
+          },
+          "gyro_roll": {
+            "range": [
+              -90.0,
+              90.0
+            ],
+            "type": "float",
+            "value": "0.0"
+          },
+          "gyro_roll_hardWarning": {
+            "range": [
+              0.0,
+              90.0
+            ],
+            "type": "float",
+            "value": "25.0"
+          },
+          "gyro_roll_softWarning": {
+            "range": [
+              0.0,
+              90.0
+            ],
+            "type": "float",
+            "value": "15.0"
+          },
+          "gyro_roll_warningRange": {
+            "range": [
+              0.0,
+              90.0
+            ],
+            "type": "float",
+            "value": "35.0"
+          },
+          "gyro_softWarningColor": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "Vec4",
+            "value": "[0.902, 0.721, 0.09, 1.0]"
+          },
+          "gyro_state": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "float",
+            "value": "1.0"
+          }
+        },
+        "modificationTime": "2020-06-04T07:58:59Z",
+        "name": "gyro_controls",
+        "outputs": {
+          "au316_2_visibility": {
+            "value": "1"
+          },
+          "au316_3_visibility": {
+            "value": "0"
+          },
+          "au316_4_visibility": {
+            "value": "0"
+          },
+          "au516_rhd_visibility": {
+            "value": "0"
+          },
+          "au516_visibility": {
+            "value": "0"
+          },
+          "au536_6_visibility": {
+            "value": "0"
+          },
+          "au536_rhd_visibility": {
+            "value": "0"
+          },
+          "au536_visibility": {
+            "value": "0"
+          },
+          "au582_rhd_visibility": {
+            "value": "0"
+          },
+          "au582_visibility": {
+            "value": "0"
+          },
+          "au736_rhd_visibility": {
+            "value": "0"
+          },
+          "au736_visibility": {
+            "value": "0"
+          },
+          "color_plate": {
+            "value": "0.0"
+          },
+          "gyro_back_rotation": {
+            "value": "0.2094393521547318"
+          },
+          "gyro_hardWarning": {
+            "value": "0.2811111211776733"
+          },
+          "gyro_med_pitch_label_pos": {
+            "value": "777.0"
+          },
+          "gyro_med_pitch_pos": {
+            "value": "852.0"
+          },
+          "gyro_med_pos_y": {
+            "value": "0.0"
+          },
+          "gyro_med_roll_x": {
+            "value": "0.0"
+          },
+          "gyro_med_scale": {
+            "value": "1.0"
+          },
+          "gyro_pitch_hard": {
+            "value": "0.2800000011920929"
+          },
+          "gyro_pitch_label_translation_y": {
+            "value": "268.0"
+          },
+          "gyro_pitch_range": {
+            "value": "0.4000000059604645"
+          },
+          "gyro_pitch_soft": {
+            "value": "0.07999999821186066"
+          },
+          "gyro_plate_pivot_rotation": {
+            "value": "[-0.0, 0.0, 0.0]"
+          },
+          "gyro_plate_rotation": {
+            "value": "[0.0, 0.0, 0.0]"
+          },
+          "gyro_plate_translation": {
+            "value": "-0.01999999955296516"
+          },
+          "gyro_roll_label_translation_x": {
+            "value": "65.0"
+          },
+          "gyro_roll_label_translation_y": {
+            "value": "268.0"
+          },
+          "gyro_roll_warning": {
+            "value": "0.0"
+          },
+          "gyro_roll_warning_preparation_1": {
+            "value": "0.0"
+          },
+          "gyro_roll_warning_preparation_2": {
+            "value": "0.0"
+          },
+          "gyro_softWarning": {
+            "value": "0.1716666668653488"
+          },
+          "gyro_state_rotate": {
+            "value": "1.0"
+          },
+          "gyro_warningRange": {
+            "value": "0.4000000059604645"
+          },
+          "gyro_z_pos": {
+            "value": "0.0"
+          },
+          "interior_inv": {
+            "value": "1"
+          },
+          "output": {
+            "value": "1.0"
+          }
+        },
+        "script_language": "Esel",
+        "uri": "Expressions/gyro_controls.esl"
+      }
+    ],
+    "material instances": [
+      {
+        "Ambient": "[0.56, 0.545, 0.486, 1.0]",
+        "BlendIntensity": "0.0",
+        "CubemapColor": "[0.03, 0.03, 0.03, 1.0]",
+        "Diffuse": "[1.0, 1.0, 1.0, 1.0]",
+        "Fragment Shader URI": "Shaders/car_cubeMapShader.frag.glsl",
+        "PointLightAttenuation_0": "[0.4519999921321869, 0.0, 0.0]",
+        "PointLightAttenuation_1": "[0.7739999890327454, 0.0, 0.0]",
+        "PointLightAttenuation_2": "[0.0, 0.0, 0.0]",
+        "PointLightColor_0": "[0.6600000262260437, 0.6600000262260437, 0.6600000262260437, 1.0]",
+        "PointLightColor_1": "[0.6600000262260437, 0.6600000262260437, 0.6600000262260437, 1.0]",
+        "PointLightColor_2": "[0.0, 0.0, 0.0, 0.0]",
+        "PointLightPosition_0": "[1.700000047683716, -10.1899995803833, 11.17000007629395]",
+        "PointLightPosition_1": "[-1.039999961853027, -2.839999914169312, -9.770000457763672]",
+        "PointLightPosition_2": "[0.0, 0.0, 0.0]",
+        "ReflectionAdjustment": "[0.0, 0.0, 0.0]",
+        "SpecularColor": "[0.513, 0.513, 0.513, 1.0]",
+        "SpecularExponent": "10.0",
+        "TextureCube": "<CubeMap 'gyro_car_cubemap'>",
+        "Vertex Shader URI": "Shaders/car_cubeMapShader.vert.glsl",
+        "blendmode": "0",
+        "creationTime": "2019-07-24T11:08:47Z",
+        "exportState": "2",
+        "modificationTime": "2020-06-04T07:54:16Z",
+        "name": "Chrome_Material",
+        "uTexture0": "None"
+      },
+      {
+        "Fragment Shader URI": "Shaders/common_coloredAlpha.frag.glsl",
+        "Vertex Shader URI": "Shaders/common_coloredAlpha.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2019-07-24T11:08:47Z",
+        "exportState": "2",
+        "modificationTime": "2020-06-04T07:54:16Z",
+        "name": "common_coloredAlpha_Material",
+        "uTexture0": "<Texture 'gyro_carshadow_Texture'>"
+      },
+      {
+        "Fragment Shader URI": "Shaders/gyro_disk_frag.glsl",
+        "Vertex Shader URI": "Shaders/gyro_disk_vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2019-07-24T11:08:47Z",
+        "exportState": "2",
+        "gyro_border": "0.0",
+        "gyro_pitch": "0.0",
+        "gyro_roll_warning": "0.0",
+        "gyro_switch": "0.0",
+        "modificationTime": "2020-06-04T07:54:16Z",
+        "name": "gyro_disk_Material",
+        "uTex0": "<Texture 'gyro_disk_Texture'>"
+      },
+      {
+        "Ambient": "[0.21, 0.21, 0.21, 1.0]",
+        "BlendIntensity": "0.0",
+        "CubemapColor": "[0.0, 0.0, 0.0, 1.0]",
+        "Diffuse": "[1.0, 1.0, 1.0, 1.0]",
+        "Fragment Shader URI": "Shaders/car_cubeMapShader.frag.glsl",
+        "PointLightAttenuation_0": "[0.4519999921321869, 0.0, 0.0]",
+        "PointLightAttenuation_1": "[0.7739999890327454, 0.0, 0.0]",
+        "PointLightAttenuation_2": "[0.0, 0.0, 0.0]",
+        "PointLightColor_0": "[0.6600000262260437, 0.6600000262260437, 0.6600000262260437, 1.0]",
+        "PointLightColor_1": "[0.6600000262260437, 0.6600000262260437, 0.6600000262260437, 1.0]",
+        "PointLightColor_2": "[0.0, 0.0, 0.0, 0.0]",
+        "PointLightPosition_0": "[1.700000047683716, -10.1899995803833, 11.17000007629395]",
+        "PointLightPosition_1": "[-1.039999961853027, -2.839999914169312, -9.770000457763672]",
+        "PointLightPosition_2": "[0.0, 0.0, 0.0]",
+        "ReflectionAdjustment": "[0.0, 0.0, 0.0]",
+        "SpecularColor": "[0.149, 0.149, 0.149, 1.0]",
+        "SpecularExponent": "67.311",
+        "TextureCube": "<CubeMap 'gyro_car_cubemap'>",
+        "Vertex Shader URI": "Shaders/car_cubeMapShader.vert.glsl",
+        "blendmode": "0",
+        "creationTime": "2019-07-24T11:08:47Z",
+        "exportState": "2",
+        "modificationTime": "2020-06-04T07:54:16Z",
+        "name": "Rubber_Material",
+        "uTexture0": "None"
+      },
+      {
+        "Ambient": "[0.72, 0.76, 0.78, 1.0]",
+        "BlendIntensity": "0.0",
+        "CubemapColor": "[0.26, 0.26, 0.26, 1.0]",
+        "Diffuse": "[1.0, 1.0, 1.0, 1.0]",
+        "Fragment Shader URI": "Shaders/car_cubeMapShader.frag.glsl",
+        "PointLightAttenuation_0": "[0.4519999921321869, 0.0, 0.0]",
+        "PointLightAttenuation_1": "[0.7739999890327454, 0.0, 0.0]",
+        "PointLightAttenuation_2": "[0.0, 0.0, 0.0]",
+        "PointLightColor_0": "[0.6600000262260437, 0.6600000262260437, 0.6600000262260437, 1.0]",
+        "PointLightColor_1": "[0.6600000262260437, 0.6600000262260437, 0.6600000262260437, 1.0]",
+        "PointLightColor_2": "[0.0, 0.0, 0.0, 0.0]",
+        "PointLightPosition_0": "[1.700000047683716, -10.1899995803833, 11.17000007629395]",
+        "PointLightPosition_1": "[-1.039999961853027, -2.839999914169312, -9.770000457763672]",
+        "PointLightPosition_2": "[0.0, 0.0, 0.0]",
+        "ReflectionAdjustment": "[0.0, 0.0, 0.0]",
+        "SpecularColor": "[1.0, 1.0, 1.0, 1.0]",
+        "SpecularExponent": "50.0",
+        "TextureCube": "<CubeMap 'gyro_car_cubemap'>",
+        "Vertex Shader URI": "Shaders/car_cubeMapShader.vert.glsl",
+        "blendmode": "0",
+        "creationTime": "2019-07-24T11:08:47Z",
+        "exportState": "2",
+        "modificationTime": "2020-06-04T07:54:16Z",
+        "name": "Carpaint_Material",
+        "uTexture0": "None"
+      },
+      {
+        "Ambient": "[0.72, 0.76, 0.78, 1.0]",
+        "BlendIntensity": "0.0",
+        "CubemapColor": "[0.26, 0.26, 0.26, 1.0]",
+        "Diffuse": "[1.0, 1.0, 1.0, 1.0]",
+        "Fragment Shader URI": "Shaders/car_cubeMapShader_RGB.frag.glsl",
+        "PointLightAttenuation_0": "[0.4519999921321869, 0.0, 0.0]",
+        "PointLightAttenuation_1": "[0.7739999890327454, 0.0, 0.0]",
+        "PointLightAttenuation_2": "[0.0, 0.0, 0.0]",
+        "PointLightColor_0": "[0.6600000262260437, 0.6600000262260437, 0.6600000262260437, 1.0]",
+        "PointLightColor_1": "[0.6600000262260437, 0.6600000262260437, 0.6600000262260437, 1.0]",
+        "PointLightColor_2": "[0.0, 0.0, 0.0, 0.0]",
+        "PointLightPosition_0": "[1.700000047683716, -10.1899995803833, 11.17000007629395]",
+        "PointLightPosition_1": "[-1.039999961853027, -2.839999914169312, -9.770000457763672]",
+        "PointLightPosition_2": "[0.0, 0.0, 0.0]",
+        "ReflectionAdjustment": "[0.0, 0.0, 0.0]",
+        "SpecularColor": "[1.0, 1.0, 1.0, 1.0]",
+        "SpecularExponent": "50.0",
+        "TextureCube": "<CubeMap 'gyro_car_cubemap'>",
+        "Vertex Shader URI": "Shaders/car_cubeMapShader.vert.glsl",
+        "blendmode": "0",
+        "creationTime": "2019-07-24T11:08:47Z",
+        "exportState": "2",
+        "modificationTime": "2020-06-04T07:54:16Z",
+        "name": "Carpaint_RGB_Material",
+        "uTexture0": "None"
+      },
+      {
+        "Ambient": "[0.0, 0.0, 0.0, 0.0]",
+        "BlendIntensity": "0.0",
+        "CubemapColor": "[0.19, 0.2, 0.25, 1.0]",
+        "Diffuse": "[0.0, 0.0, 0.0, 0.0]",
+        "Fragment Shader URI": "Shaders/glass_frag.glsl",
+        "PointLightAttenuation_0": "[0.4519999921321869, 0.0, 0.0]",
+        "PointLightAttenuation_1": "[0.7739999890327454, 0.0, 0.0]",
+        "PointLightAttenuation_2": "[0.0, 0.0, 0.0]",
+        "PointLightColor_0": "[0.6600000262260437, 0.6600000262260437, 0.6600000262260437, 1.0]",
+        "PointLightColor_1": "[0.6600000262260437, 0.6600000262260437, 0.6600000262260437, 1.0]",
+        "PointLightColor_2": "[0.0, 0.0, 0.0, 0.0]",
+        "PointLightPosition_0": "[1.700000047683716, -10.1899995803833, 11.17000007629395]",
+        "PointLightPosition_1": "[-1.039999961853027, -2.839999914169312, -9.770000457763672]",
+        "PointLightPosition_2": "[0.0, 0.0, 0.0]",
+        "ReflectionAdjustment": "[0.0, 0.0, 0.0]",
+        "SpecularColor": "[0.24, 0.26, 0.3, 1.0]",
+        "SpecularExponent": "0.35",
+        "TextureCube": "<CubeMap 'gyro_car_cubemap'>",
+        "Vertex Shader URI": "Shaders/glass_vert.glsl",
+        "blendmode": "1",
+        "creationTime": "2019-07-24T11:08:47Z",
+        "exportState": "2",
+        "modificationTime": "2020-06-04T07:54:16Z",
+        "name": "glass_Material"
+      },
+      {
+        "Fragment Shader URI": "Shaders/gyro_pitch_frag.glsl",
+        "Vertex Shader URI": "Shaders/gyro_pitch_vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2019-07-24T11:08:47Z",
+        "exportState": "2",
+        "gyro_hardWarning": "30.0",
+        "gyro_hardWarningColor": "[0.8700000047683716, 0.125, 0.125, 1.0]",
+        "gyro_softWarning": "12.0",
+        "gyro_softWarningColor": "[0.9020000100135803, 0.7210000157356262, 0.09000000357627869, 1.0]",
+        "gyro_warningRange": "46.0",
+        "modificationTime": "2020-06-04T07:54:16Z",
+        "name": "gyro_pitch_Material",
+        "uTex0": "<Texture 'gyro_pitch_Texture'>"
+      },
+      {
+        "Fragment Shader URI": "Shaders/common_desaturate.frag.glsl",
+        "Vertex Shader URI": "Shaders/common_desaturate.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2019-07-24T11:08:47Z",
+        "desaturate": "0.0",
+        "exportState": "2",
+        "modificationTime": "2020-06-04T07:54:16Z",
+        "name": "common_desaturate_Material_Material",
+        "uTexture0": "<OffscreenRenderTargetColorBuffer 'OffscreenRenderTarget_1_ColorBuffer_1'>"
+      },
+      {
+        "Ambient": "[0.0, 0.0, 0.0, 0.0]",
+        "BlendIntensity": "0.0",
+        "CubemapColor": "[0.0, 0.0, 0.0, 0.0]",
+        "Diffuse": "[1.0, 0.0, 0.0, 0.0]",
+        "Fragment Shader URI": "Shaders/car_cubeMapShader.frag.glsl",
+        "PointLightAttenuation_0": "[0.4519999921321869, 0.0, 0.0]",
+        "PointLightAttenuation_1": "[0.7739999890327454, 0.0, 0.0]",
+        "PointLightAttenuation_2": "[0.0, 0.0, 0.0]",
+        "PointLightColor_0": "[0.6600000262260437, 0.6600000262260437, 0.6600000262260437, 1.0]",
+        "PointLightColor_1": "[0.6600000262260437, 0.6600000262260437, 0.6600000262260437, 1.0]",
+        "PointLightColor_2": "[0.0, 0.0, 0.0, 0.0]",
+        "PointLightPosition_0": "[1.700000047683716, -10.1899995803833, 11.17000007629395]",
+        "PointLightPosition_1": "[-1.039999961853027, -2.839999914169312, -9.770000457763672]",
+        "PointLightPosition_2": "[0.0, 0.0, 0.0]",
+        "ReflectionAdjustment": "[0.0, 0.0, 0.0]",
+        "SpecularColor": "[0.62, 0.61, 0.61, 1.0]",
+        "SpecularExponent": "15.0",
+        "TextureCube": "<CubeMap 'gyro_car_cubemap'>",
+        "Vertex Shader URI": "Shaders/car_cubeMapShader.vert.glsl",
+        "blendmode": "0",
+        "creationTime": "2019-07-24T11:08:47Z",
+        "exportState": "2",
+        "modificationTime": "2020-06-04T07:54:16Z",
+        "name": "Rearlights_Material",
+        "uTexture0": "None"
+      },
+      {
+        "Fragment Shader URI": "Shaders/gyro_container.frag.glsl",
+        "Vertex Shader URI": "Shaders/gyro_contrainer.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2019-07-24T11:08:47Z",
+        "exportState": "2",
+        "modificationTime": "2020-06-04T07:54:16Z",
+        "name": "gyro_container_material",
+        "uTex0": "<Texture 'gyro_container_Texture'>",
+        "uTexture0_oldTEXTURE": "None"
+      },
+      {
+        "Ambient": "[0.72, 0.76, 0.78, 1.0]",
+        "BlendIntensity": "0.0",
+        "CubemapColor": "[0.011, 0.011, 0.011, 1.0]",
+        "Diffuse": "[1.0, 1.0, 1.0, 0.88]",
+        "Fragment Shader URI": "Shaders/car_cubeMapShader_RGB.frag.glsl",
+        "PointLightAttenuation_0": "[0.4519999921321869, 0.0, 0.0]",
+        "PointLightAttenuation_1": "[0.7739999890327454, 0.0, 0.0]",
+        "PointLightAttenuation_2": "[0.0, 0.0, 0.0]",
+        "PointLightColor_0": "[0.6600000262260437, 0.6600000262260437, 0.6600000262260437, 1.0]",
+        "PointLightColor_1": "[0.6600000262260437, 0.6600000262260437, 0.6600000262260437, 1.0]",
+        "PointLightColor_2": "[0.0, 0.0, 0.0, 0.0]",
+        "PointLightPosition_0": "[1.700000047683716, -10.1899995803833, 11.17000007629395]",
+        "PointLightPosition_1": "[-1.039999961853027, -2.839999914169312, -9.770000457763672]",
+        "PointLightPosition_2": "[0.0, 0.0, 0.0]",
+        "ReflectionAdjustment": "[0.0, 0.0, 0.0]",
+        "SpecularColor": "[0.61, 0.61, 0.61, 1.0]",
+        "SpecularExponent": "15.0",
+        "TextureCube": "<CubeMap 'gyro_car_cubemap'>",
+        "Vertex Shader URI": "Shaders/car_cubeMapShader.vert.glsl",
+        "blendmode": "0",
+        "creationTime": "2019-07-24T11:08:47Z",
+        "exportState": "2",
+        "modificationTime": "2020-06-04T07:54:16Z",
+        "name": "Rearlights_RGB_Material",
+        "uTexture0": "None"
+      },
+      {
+        "Ambient": "[0.38, 0.38, 0.38, 1.0]",
+        "BlendIntensity": "0.0",
+        "CubemapColor": "[0.0, 0.0, 0.0, 0.0]",
+        "Diffuse": "[1.0, 1.0, 1.0, 1.0]",
+        "Fragment Shader URI": "Shaders/car_cubeMapShader.frag.glsl",
+        "PointLightAttenuation_0": "[0.4519999921321869, 0.0, 0.0]",
+        "PointLightAttenuation_1": "[0.7739999890327454, 0.0, 0.0]",
+        "PointLightAttenuation_2": "[0.0, 0.0, 0.0]",
+        "PointLightColor_0": "[0.6600000262260437, 0.6600000262260437, 0.6600000262260437, 1.0]",
+        "PointLightColor_1": "[0.6600000262260437, 0.6600000262260437, 0.6600000262260437, 1.0]",
+        "PointLightColor_2": "[0.0, 0.0, 0.0, 0.0]",
+        "PointLightPosition_0": "[1.700000047683716, -10.1899995803833, 11.17000007629395]",
+        "PointLightPosition_1": "[-1.039999961853027, -2.839999914169312, -9.770000457763672]",
+        "PointLightPosition_2": "[0.0, 0.0, 0.0]",
+        "ReflectionAdjustment": "[0.0, 0.0, 0.0]",
+        "SpecularColor": "[0.73, 0.73, 0.73, 1.0]",
+        "SpecularExponent": "30.0",
+        "TextureCube": "<CubeMap 'gyro_car_cubemap'>",
+        "Vertex Shader URI": "Shaders/car_cubeMapShader.vert.glsl",
+        "blendmode": "0",
+        "creationTime": "2019-07-24T11:08:47Z",
+        "exportState": "2",
+        "modificationTime": "2020-06-04T07:54:16Z",
+        "name": "Plastic_Material",
+        "uTexture0": "None"
+      },
+      {
+        "Fragment Shader URI": "Shaders/gyro_roll_frag.glsl",
+        "Vertex Shader URI": "Shaders/gyro_roll_vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2019-07-24T11:08:47Z",
+        "exportState": "2",
+        "gyro_hardWarning": "0.2811111211776733",
+        "gyro_hardWarningColor": "[0.8700000047683716, 0.125, 0.125, 1.0]",
+        "gyro_softWarning": "0.1716666668653488",
+        "gyro_softWarningColor": "[0.9020000100135803, 0.7210000157356262, 0.09000000357627869, 1.0]",
+        "gyro_warningRange": "0.4000000059604645",
+        "modificationTime": "2020-06-04T07:54:16Z",
+        "name": "gyro_roll_Material",
+        "uTexture0": "<Texture 'gyro_roll_Texture'>"
+      }
+    ],
+    "textures": [
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2020-06-04T07:21:08Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "1024",
+        "modificationTime": "2020-06-04T07:21:19Z",
+        "name": "FPK_RGB_1024_8bit_Atlas_AU316_2_Q4_Texture",
+        "preview": "None",
+        "uri": "Images/cartextures/FPK_RGB_1024_8bit_Atlas_AU316_2_Q4.png",
+        "width": "1024",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2020-05-15T12:59:09Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "2048",
+        "modificationTime": "2020-05-15T12:59:22Z",
+        "name": "Master_BW_2048_32bit_Atlas_AU316_4_Q4_Texture",
+        "preview": "None",
+        "uri": "Images/cartextures/Master_BW_2048_32bit_Atlas_AU316_4_Q4.png",
+        "width": "2048",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2020-05-15T12:59:09Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "1024",
+        "modificationTime": "2020-05-15T12:59:22Z",
+        "name": "Master_RGB_1024_32bit_Atlas_AU316_4_Q4_Texture",
+        "preview": "None",
+        "uri": "Images/cartextures/Master_RGB_1024_32bit_Atlas_AU316_4_Q4.png",
+        "width": "1024",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2019-07-24T11:08:47Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "486",
+        "modificationTime": "2020-05-18T06:23:50Z",
+        "name": "gyro_pitch_Texture",
+        "preview": "None",
+        "uri": "Images/gyro_pitch.png",
+        "width": "24",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2019-07-24T11:08:47Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "14",
+        "modificationTime": "2020-05-18T06:23:50Z",
+        "name": "gyro_container_Texture",
+        "preview": "None",
+        "uri": "Images/gyro_container.png",
+        "width": "17",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2020-06-04T07:21:07Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "2048",
+        "modificationTime": "2020-06-04T07:21:22Z",
+        "name": "FPK_BW_2048_8bit_Atlas_AU316_2_Q4_Texture",
+        "preview": "None",
+        "uri": "Images/cartextures/FPK_BW_2048_8bit_Atlas_AU316_2_Q4.png",
+        "width": "2048",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2019-07-24T11:08:47Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "1024",
+        "modificationTime": "2020-05-18T06:23:50Z",
+        "name": "gyro_roll_Texture",
+        "preview": "None",
+        "uri": "Images/gyro_roll.png",
+        "width": "64",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2020-06-04T07:21:07Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "2048",
+        "modificationTime": "2020-06-04T07:21:24Z",
+        "name": "FPK_AO_2048_8bit_Atlas_AU316_2_Q4_Texture",
+        "preview": "None",
+        "uri": "Images/cartextures/FPK_AO_2048_8bit_Atlas_AU316_2_Q4.png",
+        "width": "2048",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2019-07-24T11:08:47Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "512",
+        "modificationTime": "2020-05-18T06:23:50Z",
+        "name": "gyro_disk_Texture",
+        "preview": "None",
+        "uri": "Images/gyro_disk.png",
+        "width": "512",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2019-07-24T11:08:47Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "256",
+        "modificationTime": "2020-05-18T06:23:50Z",
+        "name": "gyro_carshadow_Texture",
+        "preview": "None",
+        "uri": "Images/gyro_carshadow.png",
+        "width": "256",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2020-05-15T12:59:09Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "2048",
+        "modificationTime": "2020-05-15T12:59:23Z",
+        "name": "Master_AO_2048_32bit_Atlas_AU316_4_Q4_Texture",
+        "preview": "None",
+        "uri": "Images/cartextures/Master_AO_2048_32bit_Atlas_AU316_4_Q4.png",
+        "width": "2048",
+        "wrap mode": "1"
+      }
+    ]
+  },
+  "version_info": {
+    "EngineBuildString": "windows_64bit_release_for_host__v2.115_0",
+    "StudioVersionString": "2.24.10-1017"
+  }
+}

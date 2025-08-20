@@ -1,0 +1,629 @@
+{
+  "nodes": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "name": "street",
+                  "visibility": true
+                },
+                {
+                  "name": "carpet_green",
+                  "visibility": true
+                },
+                {
+                  "name": "carpet_white",
+                  "visibility": false
+                },
+                {
+                  "name": "rm_car",
+                  "visibility": true
+                }
+              ],
+              "name": "range_monitor_pos",
+              "visibility": true
+            }
+          ],
+          "name": "range_monitor_control_node",
+          "visibility": true
+        }
+      ],
+      "name": "Scenegraph Root Node",
+      "visibility": true
+    }
+  ],
+  "resources": {
+    "expressions": [
+      {
+        "creationTime": "2017-11-30T14:45:35Z",
+        "exportState": "2",
+        "inputs": {
+          "phev_battery_capacity": {
+            "range": [
+              0,
+              8
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "int",
+            "value": "4"
+          },
+          "phev_charging_progress": {
+            "range": [
+              0,
+              8
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "int",
+            "value": "3"
+          },
+          "phev_charging_state": {
+            "range": [
+              -1,
+              1
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "int",
+            "value": "1"
+          },
+          "phev_driving_direction": {
+            "range": [
+              -1,
+              1
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "int",
+            "value": "1"
+          },
+          "phev_driving_progress": {
+            "range": [
+              0,
+              5
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "int",
+            "value": "0"
+          },
+          "phev_driving_source_arrow": {
+            "range": [
+              0,
+              2
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "int",
+            "value": "1"
+          },
+          "phev_driving_source_motor": {
+            "range": [
+              0,
+              5
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "int",
+            "value": "1"
+          },
+          "phev_recup": {
+            "range": [
+              0,
+              1
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "int",
+            "value": "0"
+          },
+          "phev_show_arrows": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "float",
+            "value": "1.0"
+          }
+        },
+        "modificationTime": "2019-06-04T13:18:49Z",
+        "name": "energyflow_controls",
+        "outputs": {
+          "battery_active_blend": {
+            "value": "1.0"
+          },
+          "battery_active_calc": {
+            "value": "12.0"
+          },
+          "battery_active_state": {
+            "value": "1"
+          },
+          "battery_current_calc": {
+            "value": "2"
+          },
+          "battery_current_state": {
+            "value": "1"
+          },
+          "phev_anim_reflection": {
+            "value": "0.0"
+          },
+          "phev_as_battery01_capacity": {
+            "value": "1"
+          },
+          "phev_as_battery02_capacity": {
+            "value": "1"
+          },
+          "phev_as_battery03_capacity": {
+            "value": "0"
+          },
+          "phev_as_battery04_capacity": {
+            "value": "0"
+          },
+          "phev_as_battery05_capacity": {
+            "value": "0"
+          },
+          "phev_as_battery06_capacity": {
+            "value": "0"
+          },
+          "phev_as_battery07_capacity": {
+            "value": "0"
+          },
+          "phev_cs_battery01_capacity": {
+            "value": "1"
+          },
+          "phev_cs_battery02_capacity": {
+            "value": "1"
+          },
+          "phev_cs_battery03_capacity": {
+            "value": "1"
+          },
+          "phev_cs_battery04_capacity": {
+            "value": "0"
+          },
+          "phev_cs_battery05_capacity": {
+            "value": "0"
+          },
+          "phev_cs_battery06_capacity": {
+            "value": "0"
+          },
+          "phev_cs_battery07_capacity": {
+            "value": "0"
+          },
+          "phev_recup_inv": {
+            "value": "1"
+          }
+        },
+        "phev_battery01_capacity_oldINT": "1",
+        "phev_battery02_capacity_oldINT": "1",
+        "phev_battery03_capacity_oldINT": "1",
+        "phev_battery04_capacity_oldINT": "1",
+        "phev_battery05_capacity_oldINT": "1",
+        "phev_battery06_capacity_oldINT": "1",
+        "phev_battery07_capacity_oldINT": "1",
+        "phev_battery_capacity": "4",
+        "phev_charging_progress": "3",
+        "phev_charging_state": "1",
+        "phev_driving_direction": "1",
+        "phev_driving_progress": "0",
+        "phev_driving_source_arrow": "1",
+        "phev_driving_source_motor": "1",
+        "phev_recup": "0",
+        "phev_show_arrows": "1.0",
+        "script_language": "Esel",
+        "uri": "Expressions/energyflow_controls.esl"
+      },
+      {
+        "creationTime": "2018-07-25T07:00:18Z",
+        "exportState": "2",
+        "inputs": {
+          "rw_e": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "float",
+            "value": "1.0"
+          },
+          "rw_pot": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "float",
+            "value": "0.0"
+          }
+        },
+        "modificationTime": "2018-07-25T07:58:04Z",
+        "name": "range_monitor_controls",
+        "outputs": {
+          "carpet_e_step": {
+            "value": "1.0"
+          },
+          "carpet_pot_step": {
+            "value": "0.0"
+          },
+          "carpet_visibility_e": {
+            "value": "1"
+          },
+          "carpet_visibility_pot": {
+            "value": "0"
+          },
+          "green_carpet_pot_movement": {
+            "value": "0.9999359846115112"
+          },
+          "white_carpet_e_movement": {
+            "value": "1.0"
+          },
+          "white_carpet_pot_movement": {
+            "value": "1.0"
+          }
+        },
+        "rw_derivative_oldINT": "0",
+        "rw_e": "1.0",
+        "rw_pot": "0.0",
+        "script_language": "Esel",
+        "uri": "Expressions/range_monitor_controls.esl"
+      }
+    ],
+    "material instances": [
+      {
+        "Fragment Shader URI": "Shaders/common_ColoredGreyAlpha.frag.glsl",
+        "Texture": "None",
+        "Vertex Shader URI": "Shaders/common_ColoredGreyAlpha.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2018-07-25T07:00:18Z",
+        "exportState": "2",
+        "modificationTime": "2018-07-25T07:00:18Z",
+        "name": "common_coloredGreyAlpha_instance"
+      },
+      {
+        "Fragment Shader URI": "Shaders/common_textured.frag.glsl",
+        "Texture": "None",
+        "Vertex Shader URI": "Shaders/common_textured.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2017-11-23T09:06:48Z",
+        "exportState": "2",
+        "modificationTime": "2018-07-17T12:44:35Z",
+        "name": "common_textured_instance"
+      },
+      {
+        "Fragment Shader URI": "Shaders/common_coloredAlpha.frag.glsl",
+        "Texture": "None",
+        "Vertex Shader URI": "Shaders/common_coloredAlpha.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2018-07-17T12:46:41Z",
+        "exportState": "2",
+        "modificationTime": "2018-07-17T12:46:46Z",
+        "name": "common_coloredAlpha_instance"
+      },
+      {
+        "Fragment Shader URI": "Shaders/common_greyAlpha.frag.glsl",
+        "Texture": "None",
+        "Vertex Shader URI": "Shaders/common_greyAlpha.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2018-07-17T12:54:50Z",
+        "exportState": "2",
+        "modificationTime": "2018-07-17T12:54:55Z",
+        "name": "common_greyAlpha_instance_1"
+      },
+      {
+        "Fragment Shader URI": "Shaders/common_greyAlpha.frag.glsl",
+        "Texture": "None",
+        "Vertex Shader URI": "Shaders/common_greyAlpha.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2018-07-25T07:00:18Z",
+        "exportState": "2",
+        "modificationTime": "2018-07-25T07:00:18Z",
+        "name": "common_greyAlpha_instance"
+      },
+      {
+        "ColorTexture": "None",
+        "Fragment Shader URI": "Shaders/phev_drive.frag.glsl",
+        "Texture": "None",
+        "Vertex Shader URI": "Shaders/phev_drive.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2018-07-17T13:08:39Z",
+        "exportState": "2",
+        "modificationTime": "2018-07-17T13:08:43Z",
+        "name": "phev_drive_instance",
+        "phev_coloring": "0.0",
+        "phev_driving_source_motor": "0.0",
+        "section_stripeEnabled": "0.0"
+      },
+      {
+        "AtlasColumns": "0.0",
+        "AtlasIndex": "0.0",
+        "AtlasRows": "0.0",
+        "Fragment Shader URI": "Shaders/textureAtlas_arrows.frag.glsl",
+        "Texture": "None",
+        "TextureMask": "None",
+        "Vertex Shader URI": "Shaders/textureAtlas_arrows.vert.glsl",
+        "arrow_recup": "0.0",
+        "blendmode": "2",
+        "creationTime": "2018-07-17T13:02:23Z",
+        "exportState": "2",
+        "modificationTime": "2018-07-17T13:02:28Z",
+        "name": "textureAtlas_arrows_instance",
+        "phev_arrow_visiblity": "0.0",
+        "phev_driving_source_arrow": "0.0"
+      },
+      {
+        "Fragment Shader URI": "Shaders/carpet_morph.frag.glsl",
+        "Morph": "0.0",
+        "Morph1": "0.0",
+        "Vertex Shader URI": "Shaders/carpet_morph.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2018-07-25T07:00:18Z",
+        "exportState": "2",
+        "modificationTime": "2018-07-25T07:00:18Z",
+        "name": "carpet_morph_instance",
+        "switchColor": "0.0"
+      },
+      {
+        "AtlasColumns": "0.0",
+        "AtlasIndex": "0.0",
+        "AtlasRows": "0.0",
+        "Fragment Shader URI": "Shaders/textureAtlas.frag.glsl",
+        "Texture": "None",
+        "Vertex Shader URI": "Shaders/textureAtlas.vert.glsl",
+        "blendmode": "2",
+        "channel_switch": "0.0",
+        "creationTime": "2018-07-17T13:01:39Z",
+        "exportState": "2",
+        "modificationTime": "2018-07-17T13:01:44Z",
+        "name": "textureAtlas_instance"
+      }
+    ],
+    "textures": [
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-07-25T07:00:18Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "120",
+        "modificationTime": "2018-07-25T07:52:20Z",
+        "name": "RM_street_tex",
+        "preview": "None",
+        "uri": "Images/RM_street_MED.png",
+        "width": "341",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-07-16T07:26:47Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "130",
+        "modificationTime": "2019-06-04T12:43:36Z",
+        "name": "phev_wheel_reflection_AU326_tex",
+        "preview": "None",
+        "uri": "Images/AU326/phev_wheel_reflection_AU326.png",
+        "width": "1416",
+        "wrap mode": "0"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-07-16T07:26:47Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "136",
+        "modificationTime": "2018-07-23T11:54:56Z",
+        "name": "battery_active_tex",
+        "preview": "None",
+        "uri": "Images/battery_active.png",
+        "width": "368",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-07-16T07:26:47Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "140",
+        "modificationTime": "2019-06-04T10:03:46Z",
+        "name": "phev_motor_colour_AU326_tex",
+        "preview": "None",
+        "uri": "Images/AU326/phev_motor_colour_AU326.png",
+        "width": "236",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-07-16T07:26:47Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "130",
+        "modificationTime": "2019-06-04T13:10:26Z",
+        "name": "phev_wheel_arrow_maske_AU326_tex",
+        "preview": "None",
+        "uri": "Images/AU326/phev_wheel_arrow_maske_AU326.png",
+        "width": "274",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-07-25T07:00:18Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "153",
+        "modificationTime": "2019-06-24T10:23:06Z",
+        "name": "RM_car_tex",
+        "preview": "None",
+        "uri": "Images/RM_car_MED.png",
+        "width": "472",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-07-16T07:26:47Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "130",
+        "modificationTime": "2019-06-04T13:10:18Z",
+        "name": "phev_wheel_arrow_AU326_tex",
+        "preview": "None",
+        "uri": "Images/AU326/phev_wheel_arrow_AU326.png",
+        "width": "1644",
+        "wrap mode": "0"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-07-16T07:26:47Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "258",
+        "modificationTime": "2019-06-04T12:51:13Z",
+        "name": "phev_wheel_reflection_mid_AU326_tex",
+        "preview": "None",
+        "uri": "Images/AU326/phev_wheel_reflection_mid_AU326.png",
+        "width": "522",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-07-19T12:38:00Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "332",
+        "modificationTime": "2019-06-04T10:03:22Z",
+        "name": "car_AU326_tex",
+        "preview": "None",
+        "uri": "Images/AU326/car_AU326.png",
+        "width": "690",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-07-16T07:26:47Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "168",
+        "modificationTime": "2018-07-16T07:29:20Z",
+        "name": "phev_car_shadow_tex",
+        "preview": "None",
+        "uri": "Images/phev_car_shadow.png",
+        "width": "281",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-07-16T07:26:47Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "370",
+        "modificationTime": "2018-07-16T07:29:20Z",
+        "name": "phev_floor_tex",
+        "preview": "None",
+        "uri": "Images/phev_floor.png",
+        "width": "1232",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-07-16T07:26:47Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "203",
+        "modificationTime": "2019-06-04T10:03:57Z",
+        "name": "phev_motor_shadow_AU326_tex",
+        "preview": "None",
+        "uri": "Images/AU326/phev_motor_shadow_AU326.png",
+        "width": "435",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-07-16T07:26:47Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "140",
+        "modificationTime": "2019-06-04T10:03:31Z",
+        "name": "motor_AU326_tex",
+        "preview": "None",
+        "uri": "Images/AU326/motor_AU326.png",
+        "width": "236",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-07-16T07:26:47Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "183",
+        "modificationTime": "2019-06-04T13:12:21Z",
+        "name": "phev_wheel_arrow_front_AU326_tex",
+        "preview": "None",
+        "uri": "Images/AU326/phev_wheel_arrow_front_AU326.png",
+        "width": "1698",
+        "wrap mode": "0"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-07-16T07:26:47Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "134",
+        "modificationTime": "2019-06-04T12:55:00Z",
+        "name": "wheel_atlas_AU326_tex",
+        "preview": "None",
+        "uri": "Images/AU326/wheel_atlas_AU326.png",
+        "width": "1470",
+        "wrap mode": "0"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-07-16T07:26:47Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "77",
+        "modificationTime": "2018-07-23T11:54:49Z",
+        "name": "battery inactive_tex",
+        "preview": "None",
+        "uri": "Images/battery inactive.png",
+        "width": "99",
+        "wrap mode": "1"
+      }
+    ]
+  },
+  "version_info": {
+    "EngineBuildString": "windows_64bit_release_for_host__v2.115_0",
+    "StudioVersionString": "2.24.10-1017"
+  }
+}

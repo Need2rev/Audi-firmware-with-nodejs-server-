@@ -1,0 +1,168 @@
+{
+  "nodes": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "name": "street",
+                  "visibility": true
+                },
+                {
+                  "name": "carpet_green",
+                  "visibility": true
+                },
+                {
+                  "name": "carpet_white",
+                  "visibility": false
+                },
+                {
+                  "name": "rm_car",
+                  "visibility": true
+                }
+              ],
+              "name": "range_monitor_pos",
+              "visibility": true
+            }
+          ],
+          "name": "range_monitor_control_node",
+          "visibility": true
+        }
+      ],
+      "name": "Scenegraph Root Node",
+      "visibility": true
+    }
+  ],
+  "resources": {
+    "expressions": [
+      {
+        "creationTime": "2018-07-25T07:00:18Z",
+        "exportState": "2",
+        "inputs": {
+          "rw_e": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "float",
+            "value": "1.0"
+          },
+          "rw_pot": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "float",
+            "value": "0.0"
+          }
+        },
+        "modificationTime": "2018-07-25T07:00:18Z",
+        "name": "range_monitor_controls",
+        "outputs": {
+          "carpet_e_step": {
+            "value": "1.0"
+          },
+          "carpet_pot_step": {
+            "value": "0.0"
+          },
+          "carpet_visibility_e": {
+            "value": "1"
+          },
+          "carpet_visibility_pot": {
+            "value": "0"
+          },
+          "green_carpet_pot_movement": {
+            "value": "0.9999359846115112"
+          },
+          "white_carpet_e_movement": {
+            "value": "1.0"
+          },
+          "white_carpet_pot_movement": {
+            "value": "1.0"
+          }
+        },
+        "rw_derivative_oldINT": "0",
+        "rw_e": "1.0",
+        "rw_pot": "0.0",
+        "script_language": "Esel",
+        "uri": "Expressions/range_monitor_controls.esl"
+      }
+    ],
+    "material instances": [
+      {
+        "Fragment Shader URI": "Shaders/common_ColoredGreyAlpha.frag.glsl",
+        "Texture": "None",
+        "Vertex Shader URI": "Shaders/common_ColoredGreyAlpha.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2018-07-25T07:00:18Z",
+        "exportState": "2",
+        "modificationTime": "2018-07-25T07:00:18Z",
+        "name": "common_coloredGreyAlpha_instance"
+      },
+      {
+        "Fragment Shader URI": "Shaders/common_greyAlpha.frag.glsl",
+        "Texture": "None",
+        "Vertex Shader URI": "Shaders/common_greyAlpha.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2018-07-25T07:00:18Z",
+        "exportState": "2",
+        "modificationTime": "2018-07-25T07:00:18Z",
+        "name": "common_greyAlpha_instance"
+      },
+      {
+        "Fragment Shader URI": "Shaders/carpet_morph.frag.glsl",
+        "Morph": "0.0",
+        "Morph1": "0.0",
+        "Vertex Shader URI": "Shaders/carpet_morph.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2018-07-25T07:00:18Z",
+        "exportState": "2",
+        "modificationTime": "2018-07-25T07:00:18Z",
+        "name": "carpet_morph_instance",
+        "switchColor": "0.0"
+      }
+    ],
+    "textures": [
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-07-25T07:00:18Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "123",
+        "modificationTime": "2018-07-25T07:00:18Z",
+        "name": "RM_street_tex",
+        "preview": "None",
+        "uri": "Images/RM_street.png",
+        "width": "424",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-07-25T07:00:18Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "175",
+        "modificationTime": "2019-12-11T10:38:51Z",
+        "name": "RM_car_tex",
+        "preview": "None",
+        "uri": "Images/RM_car_AU51327.png",
+        "width": "554",
+        "wrap mode": "1"
+      }
+    ]
+  },
+  "version_info": {
+    "EngineBuildString": "windows_64bit_release_for_host__v2.115_0",
+    "StudioVersionString": "2.24.10-1017"
+  }
+}

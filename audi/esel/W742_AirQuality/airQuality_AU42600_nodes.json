@@ -1,0 +1,390 @@
+{
+  "nodes": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "name": "aq_pollution_car",
+                  "visibility": true
+                },
+                {
+                  "name": "aq_car_filter",
+                  "visibility": true
+                }
+              ],
+              "name": "aq_car_pos",
+              "visibility": true
+            },
+            {
+              "children": [
+                {
+                  "name": "aq_pollution_plq1_outside",
+                  "visibility": true
+                },
+                {
+                  "name": "aq_pollution_plq1_inside",
+                  "visibility": true
+                }
+              ],
+              "name": "aq_PLQ_1",
+              "visibility": true
+            },
+            {
+              "children": [
+                {
+                  "name": "aq_pollution_plq2_outside",
+                  "visibility": true
+                },
+                {
+                  "name": "aq_pollution_plq2_inside",
+                  "visibility": true
+                }
+              ],
+              "name": "aq_PLQ_2",
+              "visibility": true
+            }
+          ],
+          "name": "aq_pollution_control_node",
+          "visibility": true
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [],
+                  "name": "aq_label_top",
+                  "visibility": true
+                },
+                {
+                  "children": [],
+                  "name": "aq_label_bot",
+                  "visibility": true
+                },
+                {
+                  "name": "aq_Bargraph_digits_mid",
+                  "visibility": true
+                },
+                {
+                  "name": "aq_Bargraph_mid",
+                  "visibility": true
+                },
+                {
+                  "name": "aq_Bargraph_arrow_top",
+                  "visibility": false
+                },
+                {
+                  "name": "aq_Bargraph_arrow_bottom",
+                  "visibility": false
+                },
+                {
+                  "children": [],
+                  "name": "aq_label_left",
+                  "visibility": true
+                }
+              ],
+              "name": "aq_bargraph_pos",
+              "visibility": true
+            }
+          ],
+          "name": "aq_bargraph_control_node",
+          "visibility": true
+        }
+      ],
+      "name": "Scenegraph Root Node",
+      "visibility": true
+    }
+  ],
+  "resources": {
+    "expressions": [
+      {
+        "aq_color_PLQ2_inside": "[1.0, 0.0, 0.0, 1.0]",
+        "aq_color_PLQ2_outside": "[0.211, 0.0, 1.0, 1.0]",
+        "aq_driverSide": "0",
+        "aq_pollution_PLQ1_inside": "12",
+        "aq_pollution_PLQ1_outside": "2",
+        "aq_pollution_PLQ2_inside": "6",
+        "aq_pollution_PLQ2_outside": "6",
+        "aq_state": "1",
+        "creationTime": "2018-10-23T08:51:14Z",
+        "exportState": "2",
+        "inputs": {
+          "aq_color_PLQ2_inside": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "Vec4",
+            "value": "[1.0, 0.0, 0.0, 1.0]"
+          },
+          "aq_color_PLQ2_outside": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "Vec4",
+            "value": "[0.211, 0.0, 1.0, 1.0]"
+          },
+          "aq_driverSide": {
+            "range": [
+              0,
+              1
+            ],
+            "type": "int",
+            "value": "0"
+          },
+          "aq_pollution_PLQ1_inside": {
+            "range": [
+              0,
+              12
+            ],
+            "type": "int",
+            "value": "12"
+          },
+          "aq_pollution_PLQ1_outside": {
+            "range": [
+              0,
+              8
+            ],
+            "type": "int",
+            "value": "2"
+          },
+          "aq_pollution_PLQ2_inside": {
+            "range": [
+              0,
+              6
+            ],
+            "type": "int",
+            "value": "6"
+          },
+          "aq_pollution_PLQ2_outside": {
+            "range": [
+              0,
+              6
+            ],
+            "type": "int",
+            "value": "6"
+          },
+          "aq_state": {
+            "range": [
+              0,
+              1
+            ],
+            "type": "int",
+            "value": "1"
+          }
+        },
+        "modificationTime": "2019-04-25T12:57:44Z",
+        "name": "aq_pollution_controls",
+        "outputs": {
+          "state_pos": {
+            "value": "255.0"
+          }
+        },
+        "script_language": "Esel",
+        "uri": "Expressions/aq_pollution_controls.esl"
+      },
+      {
+        "aq_arrow_bot": "0.0",
+        "aq_arrow_bot_visible": "0",
+        "aq_arrow_top": "0.0",
+        "aq_arrow_top_visible": "0",
+        "creationTime": "2018-10-23T08:51:14Z",
+        "exportState": "2",
+        "inputs": {
+          "aq_arrow_bot": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "float",
+            "value": "0.0"
+          },
+          "aq_arrow_bot_visible": {
+            "range": [
+              0,
+              1
+            ],
+            "type": "int",
+            "value": "0"
+          },
+          "aq_arrow_top": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "type": "float",
+            "value": "0.0"
+          },
+          "aq_arrow_top_visible": {
+            "range": [
+              0,
+              1
+            ],
+            "type": "int",
+            "value": "0"
+          }
+        },
+        "modificationTime": "2018-10-23T08:51:14Z",
+        "name": "aq_bargraph_controls",
+        "outputs": {
+          "aq_arrow_bot_pos": {
+            "value": "0.0"
+          },
+          "aq_arrow_top_pos": {
+            "value": "0.0"
+          }
+        },
+        "script_language": "Esel",
+        "uri": "Expressions/aq_bargraph_controls.esl"
+      }
+    ],
+    "material instances": [
+      {
+        "Fragment Shader URI": "Shaders/common_textured.frag.glsl",
+        "Texture": "None",
+        "Vertex Shader URI": "Shaders/common_textured.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2018-10-23T08:51:14Z",
+        "exportState": "2",
+        "modificationTime": "2018-10-23T08:51:14Z",
+        "name": "common_textured_material"
+      },
+      {
+        "Fragment Shader URI": "Shaders/aq_pollution.frag.glsl",
+        "Texture": "<Texture 'aq_pollution_tex'>",
+        "Vertex Shader URI": "Shaders/aq_pollution.vert.glsl",
+        "aq_level": "12.0",
+        "blendmode": "2",
+        "creationTime": "2018-10-23T08:51:14Z",
+        "exportState": "2",
+        "modificationTime": "2018-10-23T08:51:14Z",
+        "name": "aq_pollution_material"
+      },
+      {
+        "Fragment Shader URI": "Shaders/aq_car.frag.glsl",
+        "Texture": "<Texture 'aq_car_tex'>",
+        "Vertex Shader URI": "Shaders/aq_car.vert.glsl",
+        "aq_driverSide": "0.0",
+        "blendmode": "2",
+        "creationTime": "2018-10-23T08:51:14Z",
+        "exportState": "2",
+        "modificationTime": "2018-10-23T08:51:14Z",
+        "name": "aq_car_material"
+      },
+      {
+        "Fragment Shader URI": "Shaders/common_greyAlpha.frag.glsl",
+        "Texture": "None",
+        "Vertex Shader URI": "Shaders/common_greyAlpha.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2018-10-23T08:51:14Z",
+        "exportState": "2",
+        "modificationTime": "2018-10-23T08:51:14Z",
+        "name": "common_greyAlpha_material"
+      },
+      {
+        "Fragment Shader URI": "Shaders/common_solidColor.frag.glsl",
+        "Texture_oldTEXTURE": "None",
+        "Vertex Shader URI": "Shaders/common_solidColor.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2018-10-23T08:51:14Z",
+        "exportState": "2",
+        "modificationTime": "2018-10-23T08:51:14Z",
+        "name": "common_solidColor_material"
+      }
+    ],
+    "textures": [
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-10-23T08:51:14Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "31",
+        "modificationTime": "2018-10-23T08:51:14Z",
+        "name": "aq_Bargraph_tex",
+        "preview": "None",
+        "uri": "Images/aq_Bargraph.png",
+        "width": "2",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-10-23T08:51:14Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "29",
+        "modificationTime": "2018-10-23T08:51:14Z",
+        "name": "aq_Bargraph_mid_tex",
+        "preview": "None",
+        "uri": "Images/aq_Bargraph_mid.png",
+        "width": "145",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-10-23T08:51:14Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "9",
+        "modificationTime": "2018-10-23T08:51:14Z",
+        "name": "aq_pollution_plq2_tex",
+        "preview": "None",
+        "uri": "Images/aq_pollution_plq2.png",
+        "width": "9",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-10-23T08:51:14Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "12",
+        "modificationTime": "2018-10-23T08:51:14Z",
+        "name": "aq_pollution_tex",
+        "preview": "None",
+        "uri": "Images/aq_pollution.png",
+        "width": "12",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-10-23T08:51:14Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "423",
+        "modificationTime": "2019-04-25T12:55:46Z",
+        "name": "aq_car_tex",
+        "preview": "None",
+        "uri": "Images/aq_car_AU426.png",
+        "width": "890",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2018-10-23T08:51:14Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "58",
+        "modificationTime": "2018-10-23T08:51:14Z",
+        "name": "aq_filter_tex",
+        "preview": "None",
+        "uri": "Images/aq_filter.png",
+        "width": "80",
+        "wrap mode": "1"
+      }
+    ]
+  },
+  "version_info": {
+    "EngineBuildString": "windows_64bit_release_for_host__v2.115_0",
+    "StudioVersionString": "2.24.10-1017"
+  }
+}

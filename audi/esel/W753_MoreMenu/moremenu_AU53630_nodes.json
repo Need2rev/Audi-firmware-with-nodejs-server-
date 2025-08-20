@@ -1,0 +1,608 @@
+{
+  "nodes": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "name": "mm_anim_bg_lh",
+                  "visibility": true
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "mma_sync_glow",
+                          "visibility": true
+                        }
+                      ],
+                      "name": "mm_sync",
+                      "visibility": true
+                    },
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "name": "mm_ionisation_shadow",
+                              "visibility": true
+                            },
+                            {
+                              "name": "mm_ionisation_mesh",
+                              "visibility": true
+                            },
+                            {
+                              "name": "mm_ionisation_wheel",
+                              "visibility": false
+                            }
+                          ],
+                          "name": "mm_ionisation_node",
+                          "visibility": true
+                        }
+                      ],
+                      "name": "mm_ionisation",
+                      "visibility": true
+                    },
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "name": "mm_perfume_mid",
+                              "visibility": true
+                            },
+                            {
+                              "name": "mm_perfume_left",
+                              "visibility": true
+                            },
+                            {
+                              "name": "mm_perfume_right",
+                              "visibility": true
+                            }
+                          ],
+                          "name": "mm_perfume_node",
+                          "visibility": true
+                        }
+                      ],
+                      "name": "mm_perfume",
+                      "visibility": true
+                    },
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "children": [
+                                {
+                                  "name": "mm_ac_max_side_l",
+                                  "visibility": true
+                                },
+                                {
+                                  "name": "mm_ac_max_side_r",
+                                  "visibility": true
+                                },
+                                {
+                                  "name": "mm_ac_max_mid",
+                                  "visibility": true
+                                }
+                              ],
+                              "name": "mm_ac_max_elements",
+                              "visibility": true
+                            }
+                          ],
+                          "name": "mm_ac_max_anim",
+                          "visibility": true
+                        }
+                      ],
+                      "name": "mm_ac_max_node",
+                      "visibility": true
+                    },
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "name": "mm_lenkradheizung",
+                              "visibility": true
+                            }
+                          ],
+                          "name": "mm_lenkradheizung_anim",
+                          "visibility": true
+                        }
+                      ],
+                      "name": "mm_lenkradheizung_node",
+                      "visibility": true
+                    }
+                  ],
+                  "name": "mm_animation",
+                  "visibility": true
+                }
+              ],
+              "name": "moremenu_pos",
+              "visibility": true
+            }
+          ],
+          "name": "moremenu_control_node",
+          "visibility": true
+        }
+      ],
+      "name": "Scenegraph Root Node",
+      "visibility": true
+    }
+  ],
+  "resources": {
+    "expressions": [
+      {
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "inputs": {
+          "mm_ac_max_anim": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "float",
+            "value": "0.0"
+          },
+          "mm_driver": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "float",
+            "value": "0.0"
+          },
+          "mm_heating_anim": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "float",
+            "value": "0.0"
+          },
+          "mm_ionisation_anim": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "float",
+            "value": "0.0"
+          },
+          "mm_perfume_anim": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "float",
+            "value": "0.0"
+          },
+          "mm_sync_anim": {
+            "range": [
+              0.0,
+              1.0
+            ],
+            "tags": [
+              "interface"
+            ],
+            "type": "float",
+            "value": "0.0"
+          }
+        },
+        "mm_ac_max_anim": "0.0",
+        "mm_driver": "0.0",
+        "mm_heating_anim": "0.0",
+        "mm_ionisation_anim": "0.0",
+        "mm_perfume_anim": "0.0",
+        "mm_sync_anim": "0.0",
+        "modificationTime": "2019-01-24T13:15:01Z",
+        "name": "moremenu_controls",
+        "outputs": {
+          "ionisation_blend": {
+            "value": "0.0"
+          },
+          "ionisation_calc": {
+            "value": "0.0"
+          },
+          "ionisation_morph": {
+            "value": "0.0"
+          },
+          "ionisation_scale_x": {
+            "value": "0.9700000286102295"
+          },
+          "ionisation_scale_y": {
+            "value": "0.8500000238418579"
+          },
+          "ionisation_trans": {
+            "value": "0.0"
+          },
+          "ionisation_vis": {
+            "value": "0.0"
+          },
+          "lh_anim_blend1": {
+            "value": "0.0"
+          },
+          "lh_anim_blend2": {
+            "value": "0.0"
+          },
+          "lh_anim_blend_oldFLOAT": {
+            "value": "0.0"
+          },
+          "lh_anim_calc": {
+            "value": "0.0"
+          },
+          "lh_anim_prep": {
+            "value": "1.0"
+          },
+          "max_anim_blend": {
+            "value": "0.0"
+          },
+          "max_anim_calc": {
+            "value": "0.0"
+          },
+          "max_anim_highlight_blend": {
+            "value": "1.0"
+          },
+          "max_anim_highlight_calc": {
+            "value": "0.0"
+          },
+          "mm_driver_pos_x": {
+            "value": "0.0"
+          },
+          "mm_driver_scale_x": {
+            "value": "1.0"
+          },
+          "perfume_anim1": {
+            "value": "1.0"
+          },
+          "perfume_anim2": {
+            "value": "0.0"
+          },
+          "perfume_blend": {
+            "value": "0.0"
+          },
+          "perfume_blend_elements": {
+            "value": "0.0"
+          },
+          "perfume_blend_shadow": {
+            "value": "0.0"
+          },
+          "perfume_calc_oldFLOAT": {
+            "value": "0.0"
+          },
+          "perfume_trans": {
+            "value": "0.949999988079071"
+          },
+          "sync_anim1_oldFLOAT": {
+            "value": "0.1899999976158142"
+          },
+          "sync_anim2_oldFLOAT": {
+            "value": "0.0"
+          },
+          "sync_anim_blend": {
+            "value": "1.0"
+          },
+          "sync_anim_oldFLOAT": {
+            "value": "0.1899999976158142"
+          },
+          "sync_blend": {
+            "value": "0.0"
+          },
+          "sync_calc_oldFLOAT": {
+            "value": "0.0"
+          },
+          "sync_switch": {
+            "value": "0.0"
+          }
+        },
+        "script_language": "Esel",
+        "tags": [
+          "interface"
+        ],
+        "uri": "Expressions/moremenu_controls.esl"
+      }
+    ],
+    "material instances": [
+      {
+        "Fragment Shader URI": "Shaders/mm_climate_bg.frag.glsl",
+        "Texture": "None",
+        "Vertex Shader URI": "Shaders/mm_climate_bg.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "mm_ac_mid_oldFLOAT": "0.0",
+        "mm_anim_oldFLOAT": "0.0",
+        "mm_perfume": "0.0",
+        "mm_switch": "0.0",
+        "mm_sync": "0.0",
+        "modificationTime": "2019-01-24T13:08:03Z",
+        "name": "mm_climate_bg_material"
+      },
+      {
+        "Fragment Shader URI": "Shaders/mm_sync_glow.frag.glsl",
+        "Vertex Shader URI": "Shaders/mm_sync_glow.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "mm_anim": "0.0",
+        "mm_inv_anim": "0.0",
+        "modificationTime": "2019-01-23T12:51:31Z",
+        "name": "mm_sync_glow_material"
+      },
+      {
+        "Fragment Shader URI": "Shaders/mm_ionisation.frag.glsl",
+        "Morph": "0.0",
+        "Texture": "None",
+        "Vertex Shader URI": "Shaders/mm_ionisation.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "modificationTime": "2019-01-24T13:08:03Z",
+        "name": "mm_ionisation_material"
+      },
+      {
+        "Fragment Shader URI": "Shaders/mm_lenkradheizung.frag.glsl",
+        "Texture": "None",
+        "Vertex Shader URI": "Shaders/mm_lenkradheizung.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "mm_anim": "0.0",
+        "mm_opacity": "0.0",
+        "mm_opacity2": "0.0",
+        "modificationTime": "2019-01-24T13:08:03Z",
+        "name": "mm_lenkradheizung_material"
+      },
+      {
+        "Fragment Shader URI": "Shaders/mma_bg.frag.glsl",
+        "Texture": "None",
+        "Vertex Shader URI": "Shaders/mma_bg.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "mm_bg": "0.0",
+        "modificationTime": "2019-01-24T13:08:03Z",
+        "name": "mma_bg_material"
+      },
+      {
+        "Fragment Shader URI": "Shaders/mm_perfume.frag.glsl",
+        "Texture": "None",
+        "Vertex Shader URI": "Shaders/mm_perfume.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "mm_anim": "0.0",
+        "mm_anim2": "0.0",
+        "modificationTime": "2019-01-24T13:08:03Z",
+        "name": "mm_perfume_material"
+      },
+      {
+        "Fragment Shader URI": "Shaders/common_coloredAlpha.frag.glsl",
+        "Texture": "None",
+        "Vertex Shader URI": "Shaders/common_coloredAlpha.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "modificationTime": "2019-01-24T13:08:03Z",
+        "name": "common_coloredAlpha_material"
+      },
+      {
+        "Fragment Shader URI": "Shaders/mm_ac_max.frag.glsl",
+        "Texture": "None",
+        "Vertex Shader URI": "Shaders/mm_ac_max.vert.glsl",
+        "blendmode": "2",
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "mm_ac_mid": "0.0",
+        "mm_anim": "0.0",
+        "modificationTime": "2019-01-24T13:08:03Z",
+        "name": "mm_ac_max_material"
+      }
+    ],
+    "textures": [
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "54",
+        "modificationTime": "2019-01-24T12:57:41Z",
+        "name": "mma_parfume_l_tex",
+        "preview": "None",
+        "uri": "Images/mma_parfume_au536_l.png",
+        "width": "156",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "142",
+        "modificationTime": "2019-01-24T12:52:09Z",
+        "name": "mma_ac_max_mid_tex",
+        "preview": "None",
+        "uri": "Images/mma_ac_max_au536_mid.png",
+        "width": "1245",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "362",
+        "modificationTime": "2019-01-24T12:45:15Z",
+        "name": "mma_bg_lh_tex",
+        "preview": "None",
+        "uri": "Images/mma_bg_AU536_lh.png",
+        "width": "1288",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "39",
+        "modificationTime": "2019-01-23T12:51:31Z",
+        "name": "mma_parfume_r_tex",
+        "preview": "None",
+        "uri": "Images/mma_parfume_r.png",
+        "width": "188",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "352",
+        "modificationTime": "2019-01-23T12:51:31Z",
+        "name": "mma_lenkheizung_tex",
+        "preview": "None",
+        "uri": "Images/mma_lenkheizung.png",
+        "width": "368",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "119",
+        "modificationTime": "2019-01-24T13:11:44Z",
+        "name": "mma_ionisation_shadow_tex",
+        "preview": "None",
+        "uri": "Images/mma_ionisation_au536_shadow.png",
+        "width": "953",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "84",
+        "modificationTime": "2019-01-23T12:51:31Z",
+        "name": "mma_ionisation_tex",
+        "preview": "None",
+        "uri": "Images/mma_ionisation.png",
+        "width": "1104",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "280",
+        "modificationTime": "2019-01-24T13:13:21Z",
+        "name": "mma_ionisation_wheel_tex",
+        "preview": "None",
+        "uri": "Images/mma_ionisation_wheel_AU536.png",
+        "width": "338",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "87",
+        "modificationTime": "2019-01-24T12:51:55Z",
+        "name": "mma_ac_max_side_l_tex",
+        "preview": "None",
+        "uri": "Images/mma_ac_max_au536_side_l.png",
+        "width": "180",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "44",
+        "modificationTime": "2019-01-24T13:00:37Z",
+        "name": "mma_parfume_mid_tex",
+        "preview": "None",
+        "uri": "Images/mma_parfume_mid.png",
+        "width": "494",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "85",
+        "modificationTime": "2019-01-24T12:52:02Z",
+        "name": "mma_ac_max_side_r_tex",
+        "preview": "None",
+        "uri": "Images/mma_ac_max_au536_side_r.png",
+        "width": "178",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "119",
+        "modificationTime": "2019-01-23T12:51:31Z",
+        "name": "mma_parfume_au536_shadow_tex",
+        "preview": "None",
+        "uri": "Images/mma_parfume_au536_shadow.png",
+        "width": "939",
+        "wrap mode": "1"
+      },
+      {
+        "anisotropy": "1.0",
+        "creationTime": "2019-01-23T12:51:31Z",
+        "exportState": "2",
+        "filter mode": "1",
+        "format": "10",
+        "height": "67",
+        "modificationTime": "2019-01-23T14:13:34Z",
+        "name": "mma_bg_climate_tex",
+        "preview": "None",
+        "uri": "Images/mma_bg_AU516-7_climate.png",
+        "width": "612",
+        "wrap mode": "1"
+      }
+    ]
+  },
+  "version_info": {
+    "EngineBuildString": "windows_64bit_release_for_host__v2.115_0",
+    "StudioVersionString": "2.24.10-1017"
+  }
+}
