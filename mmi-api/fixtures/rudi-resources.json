@@ -1,0 +1,382 @@
+{
+  "/addressbook/contacts": {
+    "path": "/addressbook/contacts",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/addressbook/profiles": {
+    "path": "/addressbook/profiles",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/bluetooth/devices": {
+    "path": "/bluetooth/devices",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/bluetooth/nodes": {
+    "path": "/bluetooth/nodes",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/bluetooth/pairings": {
+    "path": "/bluetooth/pairings",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/bluetooth/settings": {
+    "path": "/bluetooth/settings",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/connectivity/activeReminders": {
+    "path": "/connectivity/activeReminders",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/connectivity/dataconnections": {
+    "path": "/connectivity/dataconnections",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/connectivity/devices": {
+    "path": "/connectivity/devices",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/connectivity/reminderSettings": {
+    "path": "/connectivity/reminderSettings",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/connectivity/wlcDevices": {
+    "path": "/connectivity/wlcDevices",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/displaybehaviour/displaystates": {
+    "path": "/displaybehaviour/displaystates",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/entertainmentcontrol/groups": {
+    "path": "/entertainmentcontrol/groups",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/entertainmentcontrol/sources": {
+    "path": "/entertainmentcontrol/sources",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/entertainmentcontrol/targets": {
+    "path": "/entertainmentcontrol/targets",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/externalassistant.alexa/auth": {
+    "path": "/externalassistant.alexa/auth",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/externalassistant.alexa/states": {
+    "path": "/externalassistant.alexa/states",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/garagedoor/buttonControls": {
+    "path": "/garagedoor/buttonControls",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/garagedoor/garageDoorSettings": {
+    "path": "/garagedoor/garageDoorSettings",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/garagedoor/garageDoors": {
+    "path": "/garagedoor/garageDoors",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/garagedoor/switchControls": {
+    "path": "/garagedoor/switchControls",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/garagedoor/views": {
+    "path": "/garagedoor/views",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/language/components": [
+    {
+      "component": "mmi",
+      "locale": "en_US"
+    }
+  ],
+  "/languages/components": {
+    "path": "/languages/components",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/media/childlocklevels": {
+    "path": "/media/childlocklevels",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/media/childlocks": {
+    "path": "/media/childlocks",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/onlinemedia/browserlistentries": {
+    "path": "/onlinemedia/browserlistentries",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/onlinemedia/providers": {
+    "path": "/onlinemedia/providers",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/power/clampstates": {
+    "path": "/power/clampstates",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/power/displays": {
+    "path": "/power/displays",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/power/warnings": {
+    "path": "/power/warnings",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/radio/announcements": {
+    "path": "/radio/announcements",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/radio/stations": [
+    {
+      "id": "station-1",
+      "name": "Local Mock FM",
+      "frequencyKhz": 101700
+    }
+  ],
+  "/radio/tuners": [
+    {
+      "id": "fm1",
+      "band": "FM",
+      "frequencyKhz": 101700
+    }
+  ],
+  "/radio/tunersettings": {
+    "path": "/radio/tunersettings",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/reset/triggers": {
+    "path": "/reset/triggers",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/softwareupdate/updates": {
+    "path": "/softwareupdate/updates",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/sound/capabilities": {
+    "path": "/sound/capabilities",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/sound/settings": {
+    "volume": 18,
+    "balance": 0,
+    "fader": 0
+  },
+  "/sound/status": {
+    "muted": false
+  },
+  "/sound/toneplayers": {
+    "path": "/sound/toneplayers",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/sound/volumes": [
+    {
+      "channel": "media",
+      "value": 18
+    }
+  ],
+  "/system/components": {
+    "components": [
+      {
+        "id": "mmi-ui",
+        "state": "READY"
+      },
+      {
+        "id": "rudi-runtime",
+        "state": "READY"
+      }
+    ]
+  },
+  "/system/configurations": {
+    "region": "EU",
+    "train": "7.46.7-SR17-MIB3-CL35-I145-CI45",
+    "build": "local-mock",
+    "variant": "MIB3CLU35"
+  },
+  "/system/persistenceentries": [],
+  "/system/resettables": {
+    "path": "/system/resettables",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/textinput/inputfields": [
+    {
+      "id": "default",
+      "enabled": true
+    }
+  ],
+  "/textinput/inputlanguages": [
+    "en_US",
+    "de_DE"
+  ],
+  "/textinput/inputproviders": [
+    {
+      "id": "default",
+      "type": "keyboard"
+    }
+  ],
+  "/time/switchControls": {
+    "path": "/time/switchControls",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/time/timeSettings": {
+    "path": "/time/timeSettings",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/time/valueControls": {
+    "path": "/time/valueControls",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/tour/annoucements": {
+    "path": "/tour/annoucements",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/usermanagement/activities": {
+    "path": "/usermanagement/activities",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/usermanagement/settings": {
+    "activeUser": "local_dev",
+    "profiles": [
+      "local_dev"
+    ]
+  },
+  "/vehicleinformation/vehicleData": {
+    "speedKph": 0,
+    "rpm": 0,
+    "gear": "P",
+    "outsideTempC": 21,
+    "fuelPercent": 68
+  },
+  "/webappmanagement/entrypoints": [],
+  "/wifi/nodes": {
+    "path": "/wifi/nodes",
+    "available": true,
+    "updatedAt": "2026-02-13T00:00:00Z"
+  },
+  "/apps": {
+    "apps": {
+      "media": {
+        "isAvailable": true,
+        "isInitialized": true
+      },
+      "navi": {
+        "isAvailable": true,
+        "isInitialized": true
+      },
+      "phone": {
+        "isAvailable": true,
+        "isInitialized": true
+      },
+      "radio": {
+        "isAvailable": true,
+        "isInitialized": true
+      }
+    }
+  },
+  "/display": {
+    "isAvailable": true,
+    "isInitialized": true,
+    "perceivableContext": {
+      "mainDisplay": {
+        "hasMainScreen": true,
+        "isDualDisplay": false
+      },
+      "currentRoute": "#/main"
+    }
+  },
+  "/driverassistance": {
+    "availability": "available"
+  },
+  "/trafficevents": {
+    "availability": "limited",
+    "events": []
+  },
+  "/media": {
+    "state": "ready",
+    "activeSource": "local"
+  },
+  "/navi": {
+    "state": "ready",
+    "activeRoute": null
+  },
+  "/registry": {
+    "path": "/registry",
+    "available": true
+  },
+  "/system": {
+    "path": "/system",
+    "available": true
+  },
+  "/language": {
+    "path": "/language",
+    "available": true
+  },
+  "/textinput": {
+    "path": "/textinput",
+    "available": true
+  },
+  "/vehicleinformation": {
+    "path": "/vehicleinformation",
+    "available": true
+  },
+  "/power": {
+    "path": "/power",
+    "available": true
+  },
+  "/time": {
+    "path": "/time",
+    "available": true
+  },
+  "/radio": {
+    "path": "/radio",
+    "available": true
+  },
+  "/phone": {
+    "path": "/phone",
+    "available": true
+  }
+}

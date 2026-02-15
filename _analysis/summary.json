@@ -1,0 +1,155 @@
+{
+  "TotalFiles": 7103,
+  "TotalBytes": 499841997.0,
+  "Classes": [
+    {
+      "Name": "Image",
+      "Count": 6675
+    },
+    {
+      "Name": "Text",
+      "Count": 184
+    },
+    {
+      "Name": "Archive/Container",
+      "Count": 84
+    },
+    {
+      "Name": "Binary/Other",
+      "Count": 68
+    },
+    {
+      "Name": "Video",
+      "Count": 62
+    },
+    {
+      "Name": "Audio",
+      "Count": 30
+    }
+  ],
+  "TopLargest": [
+    {
+      "Path": "C:\\Users\\Need2rev\\Documents\\GitHub\\Audi-firmware-with-nodejs-server-\\audi\\esel\\W772_VehicleTiltAngle\\gyro_AU53636.iaa",
+      "Size": 13345868,
+      "Type": "application/octet-stream",
+      "TypeHint": "unknown"
+    },
+    {
+      "Path": "C:\\Users\\Need2rev\\Documents\\GitHub\\Audi-firmware-with-nodejs-server-\\audi\\esel\\W772_VehicleTiltAngle\\gyro_AU53630.iaa",
+      "Size": 12010468,
+      "Type": "application/octet-stream",
+      "TypeHint": "unknown"
+    },
+    {
+      "Path": "C:\\Users\\Need2rev\\Documents\\GitHub\\Audi-firmware-with-nodejs-server-\\audi\\esel\\W772_VehicleTiltAngle\\gyro_AU42600.iaa",
+      "Size": 11931372,
+      "Type": "application/octet-stream",
+      "TypeHint": "unknown"
+    },
+    {
+      "Path": "C:\\Users\\Need2rev\\Documents\\GitHub\\Audi-firmware-with-nodejs-server-\\audi\\esel\\W772_VehicleTiltAngle\\gyro_AU51607.iaa",
+      "Size": 11560872,
+      "Type": "application/octet-stream",
+      "TypeHint": "unknown"
+    },
+    {
+      "Path": "C:\\Users\\Need2rev\\Documents\\GitHub\\Audi-firmware-with-nodejs-server-\\audi\\vendor.34f22af5ffbffad14cd9.js",
+      "Size": 10673659,
+      "Type": "text/javascript",
+      "TypeHint": "ext: .js"
+    },
+    {
+      "Path": "C:\\Users\\Need2rev\\Documents\\GitHub\\Audi-firmware-with-nodejs-server-\\audi\\esel\\W772_VehicleTiltAngle\\gyro_AU53600.iaa",
+      "Size": 10113008,
+      "Type": "application/octet-stream",
+      "TypeHint": "unknown"
+    },
+    {
+      "Path": "C:\\Users\\Need2rev\\Documents\\GitHub\\Audi-firmware-with-nodejs-server-\\audi\\media\\01. DJ Kuroneko - stray (VIP).mp3",
+      "Size": 9877729,
+      "Type": "audio/mpeg",
+      "TypeHint": "ext: .mp3"
+    },
+    {
+      "Path": "C:\\Users\\Need2rev\\Documents\\GitHub\\Audi-firmware-with-nodejs-server-\\audi\\esel\\W772_VehicleTiltAngle\\gyro_AU58240.iaa",
+      "Size": 9639860,
+      "Type": "application/octet-stream",
+      "TypeHint": "unknown"
+    },
+    {
+      "Path": "C:\\Users\\Need2rev\\Documents\\GitHub\\Audi-firmware-with-nodejs-server-\\audi\\media\\04. Dazegxd - Select.mp3",
+      "Size": 9009344,
+      "Type": "audio/mpeg",
+      "TypeHint": "ext: .mp3"
+    },
+    {
+      "Path": "C:\\Users\\Need2rev\\Documents\\GitHub\\Audi-firmware-with-nodejs-server-\\audi\\media\\02. Dazegxd - Emotion Engine (feat. Kaiyko).mp3",
+      "Size": 8463051,
+      "Type": "audio/mpeg",
+      "TypeHint": "ext: .mp3"
+    }
+  ],
+  "TopTypes": [
+    {
+      "Name": "image/webp",
+      "Count": 6642
+    },
+    {
+      "Name": "text/javascript",
+      "Count": 116
+    },
+    {
+      "Name": "application/gzip",
+      "Count": 84
+    },
+    {
+      "Name": "application/json",
+      "Count": 64
+    },
+    {
+      "Name": "application/octet-stream",
+      "Count": 62
+    },
+    {
+      "Name": "video/webm",
+      "Count": 62
+    },
+    {
+      "Name": "audio/mpeg",
+      "Count": 30
+    },
+    {
+      "Name": "image/svg+xml",
+      "Count": 18
+    },
+    {
+      "Name": "image/png",
+      "Count": 14
+    },
+    {
+      "Name": "font/otf",
+      "Count": 3
+    },
+    {
+      "Name": "font/ttf",
+      "Count": 3
+    },
+    {
+      "Name": "text/html",
+      "Count": 2
+    },
+    {
+      "Name": "image/x-icon",
+      "Count": 1
+    },
+    {
+      "Name": "text/css",
+      "Count": 1
+    },
+    {
+      "Name": "text/plain",
+      "Count": 1
+    }
+  ],
+  "ErrorCount": 0
+}

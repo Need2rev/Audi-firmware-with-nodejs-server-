@@ -1,0 +1,8 @@
+{
+  "name": "audi-mmi-local-dev",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix mmi-api run dev",
+    "smoke": "npm --prefix mmi-api run smoke"
+  }
+}

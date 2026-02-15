@@ -1,0 +1,75 @@
+{
+  "TotalFiles": 84,
+  "TotalBytes": 197624528.0,
+  "Classes": {
+    "Name": "Text",
+    "Count": 84
+  },
+  "TopLargest": [
+    {
+      "Path": "C:\\Users\\Need2rev\\Documents\\GitHub\\Audi-firmware-with-nodejs-server-\\_extract\\i18n\\ten-inch\\xx_LI.json",
+      "Size": 5667697,
+      "Type": "application/json",
+      "TypeHint": "ext: .json"
+    },
+    {
+      "Path": "C:\\Users\\Need2rev\\Documents\\GitHub\\Audi-firmware-with-nodejs-server-\\_extract\\i18n\\eight-inch\\xx_LI.json",
+      "Size": 5039093,
+      "Type": "application/json",
+      "TypeHint": "ext: .json"
+    },
+    {
+      "Path": "C:\\Users\\Need2rev\\Documents\\GitHub\\Audi-firmware-with-nodejs-server-\\_extract\\i18n\\ten-inch\\el_GR.json",
+      "Size": 3090700,
+      "Type": "application/json",
+      "TypeHint": "ext: .json"
+    },
+    {
+      "Path": "C:\\Users\\Need2rev\\Documents\\GitHub\\Audi-firmware-with-nodejs-server-\\_extract\\i18n\\ten-inch\\ru_RU.json",
+      "Size": 2946334,
+      "Type": "application/json",
+      "TypeHint": "ext: .json"
+    },
+    {
+      "Path": "C:\\Users\\Need2rev\\Documents\\GitHub\\Audi-firmware-with-nodejs-server-\\_extract\\i18n\\eight-inch\\el_GR.json",
+      "Size": 2899581,
+      "Type": "application/json",
+      "TypeHint": "ext: .json"
+    },
+    {
+      "Path": "C:\\Users\\Need2rev\\Documents\\GitHub\\Audi-firmware-with-nodejs-server-\\_extract\\i18n\\ten-inch\\uk_UA.json",
+      "Size": 2854411,
+      "Type": "application/json",
+      "TypeHint": "ext: .json"
+    },
+    {
+      "Path": "C:\\Users\\Need2rev\\Documents\\GitHub\\Audi-firmware-with-nodejs-server-\\_extract\\i18n\\ten-inch\\xx_ID.json",
+      "Size": 2803213,
+      "Type": "application/json",
+      "TypeHint": "ext: .json"
+    },
+    {
+      "Path": "C:\\Users\\Need2rev\\Documents\\GitHub\\Audi-firmware-with-nodejs-server-\\_extract\\i18n\\eight-inch\\xx_ID.json",
+      "Size": 2803213,
+      "Type": "application/json",
+      "TypeHint": "ext: .json"
+    },
+    {
+      "Path": "C:\\Users\\Need2rev\\Documents\\GitHub\\Audi-firmware-with-nodejs-server-\\_extract\\i18n\\eight-inch\\ru_RU.json",
+      "Size": 2762087,
+      "Type": "application/json",
+      "TypeHint": "ext: .json"
+    },
+    {
+      "Path": "C:\\Users\\Need2rev\\Documents\\GitHub\\Audi-firmware-with-nodejs-server-\\_extract\\i18n\\eight-inch\\uk_UA.json",
+      "Size": 2661375,
+      "Type": "application/json",
+      "TypeHint": "ext: .json"
+    }
+  ],
+  "TopTypes": {
+    "Name": "application/json",
+    "Count": 84
+  },
+  "ErrorCount": 0
+}

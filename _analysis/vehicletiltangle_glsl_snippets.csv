@@ -1,0 +1,46 @@
+"File","GLSLOffset","Snippet"
+"gyro_AU31627.iaa","3163684","#version 300 es
+// Start of extra defines configured in ESEL-Studio???the project???perties
+O??EndM?3??#line 2
+
+in vec3 aMesh0Position;??dNo"
+"gyro_AU31630.iaa","2646080","#version 300 es
+// Start of extra defines configured in ESEL-Studio???the project???perties
+O??EndM?3??#line 2
+
+in vec3 aMesh0Position;??dNo"
+"gyro_AU31647.iaa","3035972","#version 300 es
+// Start of extra defines configured in ESEL-Studio???the project???perties
+O??EndM?3??#line 2
+
+in vec3 aMesh0Position;??dNo"
+"gyro_AU42600.iaa","8321788","#version 300 es
+// Start of extra defines configured in ESEL-Studio???the project???perties
+O??EndM?3??#line 2
+
+in vec3 aMesh0Position;??dNo"
+"gyro_AU51607.iaa","6847152","#version 300 es
+// Start of extra defines configured in ESEL-Studio???the project???perties
+O??EndM?3??#line 2
+
+in vec3 aMesh0Position;??dNo"
+"gyro_AU53600.iaa","5133512","#version 300 es
+// Start of extra defines configured in ESEL-Studio???the project???perties
+O??EndM?3??#line 2
+
+in vec3 aMesh0Position;??dNo"
+"gyro_AU53630.iaa","6252924","#version 300 es
+// Start of extra defines configured in ESEL-Studio???the project???perties
+O??EndM?3??#line 2
+
+in vec3 aMesh0Position;??dNo"
+"gyro_AU53636.iaa","7310836","#version 300 es
+// Start of extra defines configured in ESEL-Studio???the project???perties
+O??EndM?3??#line 2
+
+in vec3 aMesh0Position;??dNo"
+"gyro_AU58240.iaa","4002232","#version 300 es
+// Start of extra defines configured in ESEL-Studio???the project???perties
+O??EndM?3??#line 2
+
+in vec3 aMesh0Position;??dNo"

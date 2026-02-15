@@ -1,0 +1,23 @@
+{
+  "use_registry": true,
+  "backends": [
+    "rudi-ws"
+  ],
+  "service_registry_locators": [
+    "rudi-ws://localhost:14713/registry"
+  ],
+  "services": [
+    {
+      "path": "/registry",
+      "type": "registry",
+      "locators": [
+        "rudi-ws://localhost:14713/registry"
+      ]
+    }
+  ],
+  "javascript": {
+    "use_plugin": false,
+    "ws_keepalive_interval": 1000
+  },
+  "ws_keepalive": true
+}
