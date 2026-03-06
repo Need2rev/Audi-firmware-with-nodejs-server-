@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MMI Emulator Control</title>
+    <style>
+      :root {
+        --bg: #121418;
+        --panel: #1c2129;
+        --panel-2: #222834;
+        --text: #eff3f7;
+        --muted: #a2acb9;
+        --line: #364050;
+        --ok: #42d17f;
+        --err: #ff6b6b;
+        --brand: #53a8ff;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", "Noto Sans", sans-serif;
+        background: radial-gradient(circle at top, #1d2633 0%, var(--bg) 48%);
+        color: var(--text);
+      }
+      header {
+        padding: 16px 20px;
+        border-bottom: 1px solid var(--line);
+        background: rgba(0, 0, 0, 0.2);
+      }
+      h1 { margin: 0; font-size: 20px; }
+      .layout {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 14px;
+        padding: 14px;
+      }
+      .card {
+        background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 12px;
+      }
+      .card h2 { margin: 0 0 10px; font-size: 15px; color: var(--brand); }
+      .grid { display: grid; gap: 8px; }
+      .row { display: flex; gap: 8px; flex-wrap: wrap; }
+      button, input, select {
+        border: 1px solid var(--line);
+        background: #151920;
+        color: var(--text);
+        border-radius: 8px;
+        padding: 8px 10px;
+      }
+      button { cursor: pointer; }
+      button:hover { border-color: var(--brand); }
+      input, select { width: 100%; }
+      .small { color: var(--muted); font-size: 12px; }
+      pre {
+        margin: 0;
+        background: #0f1217;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 8px;
+        max-height: 250px;
+        overflow: auto;
+        font-size: 12px;
+      }
+      .status-ok { color: var(--ok); }
+      .status-err { color: var(--err); }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>MMI Emulator Control</h1>
+      <div class="small">Local-only control surface for mock audio and simulator events.</div>
+    </header>
+    <main class="layout">
+      <section class="card">
+        <h2>Connection</h2>
+        <div class="grid">
+          <div id="wsStatus" class="small">WS: connecting...</div>
+          <button id="refreshStateBtn">Refresh State</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Audio Source</h2>
+        <div class="grid">
+          <select id="trackSelect"></select>
+          <div class="row">
+            <button data-event="media.source.load">Load</button>
+            <button data-event="media.play">Play</button>
+            <button data-event="media.pause">Pause</button>
+            <button data-event="media.stop">Stop</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Audio Controls</h2>
+        <div class="grid">
+          <label class="small">Seek (sec)</label>
+          <input id="seekInput" type="number" min="0" step="1" value="10" />
+          <button id="seekBtn">Send Seek</button>
+          <label class="small">Volume (0-100)</label>
+          <input id="volumeInput" type="number" min="0" max="100" step="1" value="35" />
+          <button id="volumeBtn">Set Volume</button>
+          <button id="devicesBtn">List Audio Devices</button>
+          <button id="diagBtn">Audio Diagnostics</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Simulator Events (Local Mock)</h2>
+        <div class="row">
+          <button data-sim="sim.session.start">Session Start</button>
+          <button data-sim="sim.session.stop">Session Stop</button>
+          <button data-sim="sim.user.entered">User Entered</button>
+          <button data-sim="sim.user.left">User Left</button>
+          <button data-sim="sim.ignition.on">Ignition On (sim)</button>
+          <button data-sim="sim.ignition.off">Ignition Off (sim)</button>
+          <button data-sim="sim.door.open">Door Open</button>
+          <button data-sim="sim.door.close">Door Close</button>
+          <button data-sim="sim.seat.occupied">Seat Occupied</button>
+          <button data-sim="sim.seat.empty">Seat Empty</button>
+        </div>
+        <div class="small">These are emulator-only and not mapped to real vehicle functions.</div>
+      </section>
+
+      <section class="card">
+        <h2>Audio State</h2>
+        <pre id="audioState">{}</pre>
+      </section>
+
+      <section class="card">
+        <h2>Simulator State</h2>
+        <pre id="simState">{}</pre>
+      </section>
+
+      <section class="card">
+        <h2>Event Log</h2>
+        <pre id="eventLog">[]</pre>
+      </section>
+    </main>
+
+    <script>
+      const qs = (selector) => document.querySelector(selector);
+      const audioStateEl = qs("#audioState");
+      const simStateEl = qs("#simState");
+      const eventLogEl = qs("#eventLog");
+      const wsStatusEl = qs("#wsStatus");
+      const trackSelect = qs("#trackSelect");
+      const logEntries = [];
+
+      function pushLog(entry) {
+        logEntries.unshift({ at: new Date().toISOString(), ...entry });
+        while (logEntries.length > 40) logEntries.pop();
+        eventLogEl.textContent = JSON.stringify(logEntries, null, 2);
+      }
+
+      async function httpJson(url, options) {
+        const response = await fetch(url, options);
+        const body = await response.json().catch(() => ({}));
+        return { ok: response.ok, status: response.status, body };
+      }
+
+      async function loadTracks() {
+        const result = await httpJson("/api/media/library");
+        const tracks = (result.body && result.body.tracks) || [];
+        trackSelect.innerHTML = "";
+        if (!tracks.length) {
+          const option = document.createElement("option");
+          option.value = "";
+          option.textContent = "No local tracks found";
+          trackSelect.append(option);
+          return;
+        }
+        for (const track of tracks) {
+          const option = document.createElement("option");
+          option.value = track.id;
+          option.textContent = `${track.id}: ${track.title}`;
+          trackSelect.append(option);
+        }
+      }
+
+      async function refreshStates() {
+        const [audio, sim] = await Promise.all([
+          httpJson("/api/audio/state"),
+          httpJson("/api/sim/state"),
+        ]);
+        if (audio.body && audio.body.state) audioStateEl.textContent = JSON.stringify(audio.body.state, null, 2);
+        if (sim.body && sim.body.state) simStateEl.textContent = JSON.stringify(sim.body.state, null, 2);
+      }
+
+      async function sendAudioEvent(type, payload) {
+        const result = await httpJson("/api/audio/event", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ type, payload }),
+        });
+        pushLog({ channel: "audio/http", type, result: result.body });
+        await refreshStates();
+      }
+
+      async function sendSimEvent(type, payload = {}) {
+        const result = await httpJson("/api/sim/event", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ type, payload }),
+        });
+        pushLog({ channel: "sim/http", type, result: result.body });
+        await refreshStates();
+      }
+
+      for (const button of document.querySelectorAll("button[data-event]")) {
+        button.addEventListener("click", async () => {
+          const type = button.getAttribute("data-event");
+          const selectedTrackId = trackSelect.value;
+          const payload = {};
+          if (type === "media.source.load" || type === "media.play") {
+            if (selectedTrackId) payload.id = selectedTrackId;
+          }
+          await sendAudioEvent(type, payload);
+        });
+      }
+
+      for (const button of document.querySelectorAll("button[data-sim]")) {
+        button.addEventListener("click", () => sendSimEvent(button.getAttribute("data-sim")));
+      }
+
+      qs("#seekBtn").addEventListener("click", async () => {
+        const value = Number(qs("#seekInput").value);
+        await sendAudioEvent("media.seek", { positionSec: value });
+      });
+
+      qs("#volumeBtn").addEventListener("click", async () => {
+        const value = Number(qs("#volumeInput").value);
+        await sendAudioEvent("media.volume.set", { volume: value });
+      });
+
+      qs("#devicesBtn").addEventListener("click", async () => {
+        await sendAudioEvent("audio.device.list", {});
+      });
+
+      qs("#diagBtn").addEventListener("click", async () => {
+        const result = await httpJson("/api/audio/diagnostics");
+        pushLog({ channel: "audio/http", type: "audio.backend.diagnostics", result: result.body });
+        await refreshStates();
+      });
+
+      qs("#refreshStateBtn").addEventListener("click", refreshStates);
+
+      const wsProto = location.protocol === "https:" ? "wss" : "ws";
+      const ws = new WebSocket(`${wsProto}://${location.host}/dev/ws`);
+      ws.addEventListener("open", () => {
+        wsStatusEl.textContent = "WS: connected";
+        wsStatusEl.className = "small status-ok";
+      });
+      ws.addEventListener("error", () => {
+        wsStatusEl.textContent = "WS: error";
+        wsStatusEl.className = "small status-err";
+      });
+      ws.addEventListener("close", () => {
+        wsStatusEl.textContent = "WS: disconnected";
+        wsStatusEl.className = "small status-err";
+      });
+      ws.addEventListener("message", (event) => {
+        let parsed;
+        try {
+          parsed = JSON.parse(event.data);
+        } catch {
+          return;
+        }
+        if (parsed.type === "audio.state.changed") {
+          audioStateEl.textContent = JSON.stringify(parsed.payload, null, 2);
+        } else if (parsed.type === "sim.state.changed") {
+          simStateEl.textContent = JSON.stringify(parsed.payload, null, 2);
+        }
+        if (parsed.type && parsed.type.endsWith(".result")) {
+          pushLog({ channel: "ws", type: parsed.type, payload: parsed.payload });
+        }
+      });
+
+      loadTracks().then(refreshStates);
+    </script>
+  </body>
+</html>
