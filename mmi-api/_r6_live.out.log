@@ -1,0 +1,13 @@
+[boot] Build: 2026-03-07-usermenu-audio-r6
+[boot] Mode: api-only
+[boot] Dev control UI: http://127.0.0.1:14713/dev/
+[boot] Server listening on http://127.0.0.1:14713
+[boot] DEV_CORS=true
+[audio] backend=mpv available=true mode=stopped
+[http] GET /api/health -> 200 (3.5 ms)
+[ws] connect path=/registry defaultService=/registry canonical=/registry
+[ws] connect path=/registry defaultService=/registry canonical=/registry
+[ws] close path=/registry code=1005 reason=
+[ws] close path=/registry code=1005 reason=
+[http] GET /api/health -> 200 (0.4 ms)
+[http] GET /api/health -> 200 (0.6 ms)

@@ -12,6 +12,10 @@ Lokaler Dev-Server fuer das `./audi` Bundle. Ziel ist reine UI-Emulation auf dem
   - optional `wpctl` (Device-Listing)
 
 ## Start
+Empfohlenes Setup:
+- Audi-UI statisch ueber VS Code Live Server auf `http://127.0.0.1:5501/`
+- `mmi-api` nur als Backend/RUDI-Mock auf `http://127.0.0.1:14713/`
+
 Vom Repo-Root:
 
 ```bash
@@ -25,20 +29,22 @@ npm install
 npm run dev
 ```
 
-Server-URL: `http://127.0.0.1:14713`
+Backend-URL: `http://127.0.0.1:14713`
 Control-UI: `http://127.0.0.1:14713/dev/`
+Audi-UI: `http://127.0.0.1:5501/`
 
 ## Verfuegbare Scripts
-- `npm run dev` -> startet API + UI-Static Hosting + WebSocket
+- `npm run dev` -> startet API + RUDI + WebSocket im Default `api-only`
 - `npm run start` -> identisch zu `dev`
-- `npm run smoke` -> prueft `GET /api/health` und `GET /`
+- `npm run smoke` -> prueft `GET /api/health`, `GET /etc/eso/rudi.json` und `GET /etc/eso/tracing.json`
 
 ## Ports und Env
 - `PORT` (default: `14713`)
 - `HOST` (default: `127.0.0.1`)
-- `RUDI_HOST` (default: `localhost`)
+- `RUDI_HOST` (default: aus `HOST` abgeleitet, typischerweise `127.0.0.1`)
 - `DEV_CORS` (`true|false`, default: `true`)
 - `AUDIO_BACKEND_STRICT` (`true|false`, default: `false`)
+- `SERVE_AUDI_UI` (`true|false`, default: `false`)
 
 ## Lokale Audio-Emulation (PipeWire)
 Die Audiofunktion ist rein lokal fuer den Emulator und emuliert keine Fahrzeugsteuerung.
@@ -75,12 +81,13 @@ Die Audiofunktion ist rein lokal fuer den Emulator und emuliert keine Fahrzeugst
 - `GET /etc/eso/tracing.json`
 - `GET /media/*` (statisch)
 - `GET /i18n/.../*.json` -> wird auf vorhandene `.json.gz` Dateien gemappt
-- `GET /` + SPA-Fallback -> `audi/index.html`
+- `GET /` + SPA-Fallback -> nur wenn `SERVE_AUDI_UI=true`
 - `ALL /api/*` (unbekannt) -> `501 { error: "not_implemented", method, path }`
 
 ## What `rudi.json` Is
 - `rudi.json` ist die Runtime-Konfiguration fuer die RUDI-Service-Aufloesung.
-- Das UI laedt sie ueber `http://<host>:14713/etc/eso/rudi.json` (in manchen Setups faelschlich als `//etc/eso/rudi.json`).
+- Im empfohlenen Setup laedt die UI sie ueber `http://127.0.0.1:5501/etc/eso/rudi.json`.
+- Diese Datei zeigt dann auf den Backend-Registry-WS `rudi-ws://127.0.0.1:14713/registry`.
 - Darin stehen u.a.:
   - `backends` (z. B. `rudi-ws`)
   - `service_registry_locators` (hier auf den lokalen Mock-WS)
@@ -114,7 +121,13 @@ Die Audiofunktion ist rein lokal fuer den Emulator und emuliert keine Fahrzeugst
   - `sim.seat.occupied` / `sim.seat.empty`
   - `sim.state.changed` (Broadcast)
 
-Hinweis: Der normale RUDI-WebSocket (`/`) sendet nur RUDI-kompatible Typen. Custom Emulator-Events laufen ueber `/dev/ws`, damit der UI-RUDI-Parser keine `Unsupported incoming message`-Fehler wirft.
+Hinweis: Der normale RUDI-WebSocket (`/` bzw. Registry-Locator) sendet nur RUDI-kompatible Typen. Custom Emulator-Events laufen ueber `/dev/ws`, damit der UI-RUDI-Parser keine `Unsupported incoming message`-Fehler wirft.
+
+## Empfohlene Startreihenfolge
+1. `audi/` per Live Server auf `5501` starten
+2. `http://127.0.0.1:5501/etc/eso/rudi.json` kurz pruefen
+3. `mmi-api` auf `14713` starten
+4. UI mit `Ctrl+F5` neu laden
 
 ### MCP Service Roots (Mock)
 Fuer die UI-Service-Aufloesung werden diese Roots als online publiziert:

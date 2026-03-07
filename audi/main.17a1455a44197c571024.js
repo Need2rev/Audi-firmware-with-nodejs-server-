@@ -10014,7 +10014,7 @@
           },
           {
             id: r.a.Bcall,
-            path: "",
+            path: "/help",
             appContext: s.w,
             context: a.s.Phone,
             title: o.BCALL,
@@ -10069,7 +10069,7 @@
           },
           {
             id: r.a.Poicall,
-            path: "",
+            path: "/navi",
             appContext: s.u,
             context: a.s.Navi,
             title: o.POICALL,
@@ -13025,12 +13025,7 @@
               );
             }
             isApplicationAvailable(e) {
-              return e === c.a.Messaging
-                ? !(
-                    this.systemConfigService.isHongKongSaleCountry() ||
-                    this.systemConfigService.isMacaoSaleCountry()
-                  )
-                : e !== c.a.Favorites || this.displayService.isHighResolution;
+              return !0;
             }
             isApplicationAvailable$(e) {
               return this.isApplicationAvailableInMarket(e.id)
@@ -13079,6 +13074,14 @@
                 Object(h.a)(([t, i, a, r]) =>
                   e
                     .map((e) => {
+                      if (window.__AUDI_EMULATOR_ALL_HOME_APPS__ === !0)
+                        return (
+                          (e.hideAppOnHomeScreen = !1),
+                          (e.disabled = !1),
+                          (e.disableReason = void 0),
+                          (e.isDeactivatedByFoD = !1),
+                          e
+                        );
                       switch (e.id) {
                         case c.a.SmartPhoneApps:
                           return ((e.isDeactivatedByFoD = !t), e);
@@ -13108,18 +13111,7 @@
               );
             }
             isApplicationAvailableInMarket(e) {
-              return e === c.a.Messaging
-                ? !(
-                    this.systemConfigService.isHongKongSaleCountry() ||
-                    this.systemConfigService.isMacaoSaleCountry()
-                  )
-                : e === c.a.Favorites
-                  ? this.displayService.isHighResolution
-                  : e !== c.a.Bcall ||
-                    (this.systemConfigService.isEtron() &&
-                      this.systemConfigService.isSingleDisplay() &&
-                      this.systemConfigService.isPremiumVariant() &&
-                      !this.systemConfigService.isMEBSystem());
+              return !0;
             }
           }
           return (

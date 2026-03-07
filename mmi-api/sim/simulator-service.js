@@ -2,11 +2,12 @@ class SimulatorService {
   constructor(options = {}) {
     this.onStateChanged = options.onStateChanged || (() => {});
     this.state = {
-      session: "idle",
-      userPresent: false,
-      simulatedIgnition: "off",
+      // Start in an active lab state so UI tiles are immediately usable.
+      session: "active",
+      userPresent: true,
+      simulatedIgnition: "on",
       doorState: "closed",
-      seatOccupied: false,
+      seatOccupied: true,
       lastEvent: null,
       updatedAt: new Date().toISOString(),
     };

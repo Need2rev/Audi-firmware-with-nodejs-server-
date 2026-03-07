@@ -1,0 +1,14 @@
+[boot] Build: 2026-03-07-usermenu-audio-r3
+[boot] Mode: api-only
+[boot] Dev control UI: http://127.0.0.1:14995/dev/
+[boot] Server listening on http://127.0.0.1:14995
+[boot] DEV_CORS=true
+[audio] backend=mpv available=true mode=stopped
+[http] GET /api/health -> 200 (3.3 ms)
+[ws] connect path=/targets defaultService=/targets canonical=/entertainmentcontrol
+[ws] connect path=/media defaultService=/media canonical=/media
+[ws] connect path=/persistenceentries defaultService=/persistenceentries canonical=/system
+[ws] close path=/targets code=1006 reason=
+[ws] close path=/media code=1006 reason=
+[ws] close path=/persistenceentries code=1006 reason=
+[http] GET /etc/eso/rudi.json -> 200 (3.2 ms)

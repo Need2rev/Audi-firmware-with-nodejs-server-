@@ -6,125 +6,324 @@
     <title>MMI Emulator Control</title>
     <style>
       :root {
-        --bg: #121418;
-        --panel: #1c2129;
-        --panel-2: #222834;
-        --text: #eff3f7;
-        --muted: #a2acb9;
-        --line: #364050;
-        --ok: #42d17f;
+        --bg: #0f1319;
+        --panel: #171d26;
+        --panel-2: #1d2531;
+        --line: #334154;
+        --text: #eef3f8;
+        --muted: #94a3b8;
+        --brand: #5fb3ff;
+        --ok: #50d890;
+        --warn: #ffd166;
         --err: #ff6b6b;
-        --brand: #53a8ff;
       }
       * { box-sizing: border-box; }
       body {
         margin: 0;
         font-family: "Segoe UI", "Noto Sans", sans-serif;
-        background: radial-gradient(circle at top, #1d2633 0%, var(--bg) 48%);
         color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(95, 179, 255, 0.14), transparent 28%),
+          radial-gradient(circle at top right, rgba(80, 216, 144, 0.12), transparent 24%),
+          linear-gradient(180deg, #0d1117 0%, #0f1319 100%);
       }
       header {
-        padding: 16px 20px;
+        padding: 18px 22px;
         border-bottom: 1px solid var(--line);
-        background: rgba(0, 0, 0, 0.2);
+        background: rgba(5, 8, 12, 0.65);
+        backdrop-filter: blur(10px);
+        position: sticky;
+        top: 0;
+        z-index: 2;
       }
-      h1 { margin: 0; font-size: 20px; }
-      .layout {
+      h1 {
+        margin: 0 0 6px;
+        font-size: 20px;
+      }
+      .subline {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      main {
+        padding: 14px;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 14px;
-        padding: 14px;
       }
       .card {
-        background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
+        background: linear-gradient(180deg, var(--panel), var(--panel-2));
         border: 1px solid var(--line);
-        border-radius: 12px;
-        padding: 12px;
+        border-radius: 14px;
+        padding: 14px;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
       }
-      .card h2 { margin: 0 0 10px; font-size: 15px; color: var(--brand); }
-      .grid { display: grid; gap: 8px; }
-      .row { display: flex; gap: 8px; flex-wrap: wrap; }
-      button, input, select {
-        border: 1px solid var(--line);
-        background: #151920;
-        color: var(--text);
-        border-radius: 8px;
-        padding: 8px 10px;
+      .card h2 {
+        margin: 0 0 10px;
+        font-size: 15px;
+        color: var(--brand);
       }
-      button { cursor: pointer; }
-      button:hover { border-color: var(--brand); }
-      input, select { width: 100%; }
-      .small { color: var(--muted); font-size: 12px; }
-      pre {
-        margin: 0;
-        background: #0f1217;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        padding: 8px;
-        max-height: 250px;
-        overflow: auto;
+      .meta {
+        color: var(--muted);
         font-size: 12px;
       }
+      .grid {
+        display: grid;
+        gap: 10px;
+      }
+      .row {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .row > * {
+        flex: 1 1 120px;
+      }
+      button,
+      input,
+      select,
+      textarea {
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: #10161e;
+        color: var(--text);
+        padding: 9px 11px;
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+        transition: border-color 0.15s ease, transform 0.15s ease;
+      }
+      button:hover {
+        border-color: var(--brand);
+        transform: translateY(-1px);
+      }
+      button:disabled {
+        cursor: not-allowed;
+        opacity: 0.45;
+        transform: none;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+      }
+      textarea {
+        min-height: 74px;
+        resize: vertical;
+      }
+      .pill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .pill,
+      .route-button {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 8px 12px;
+        font-size: 12px;
+        background: #0f151d;
+        color: var(--text);
+      }
+      .route-button {
+        cursor: pointer;
+      }
+      .pill.blocked {
+        color: var(--warn);
+        border-color: rgba(255, 209, 102, 0.4);
+        opacity: 0.8;
+      }
+      .status-line {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        align-items: center;
+      }
       .status-ok { color: var(--ok); }
+      .status-warn { color: var(--warn); }
       .status-err { color: var(--err); }
+      .small-label {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      pre {
+        margin: 0;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid var(--line);
+        background: #0c1016;
+        max-height: 260px;
+        overflow: auto;
+        font-size: 12px;
+        line-height: 1.45;
+      }
+      .wide {
+        grid-column: 1 / -1;
+      }
     </style>
   </head>
   <body>
     <header>
       <h1>MMI Emulator Control</h1>
-      <div class="small">Local-only control surface for mock audio and simulator events.</div>
+      <div class="subline">
+        Local-only safe emulator control for UI routing, media, users, language, sound, maintenance and simulator state.
+        Vehicle control domains such as climate, parking, proximity and rear camera are intentionally blocked.
+      </div>
     </header>
-    <main class="layout">
+
+    <main>
       <section class="card">
         <h2>Connection</h2>
         <div class="grid">
-          <div id="wsStatus" class="small">WS: connecting...</div>
-          <button id="refreshStateBtn">Refresh State</button>
-        </div>
-      </section>
-
-      <section class="card">
-        <h2>Audio Source</h2>
-        <div class="grid">
-          <select id="trackSelect"></select>
+          <div class="status-line">
+            <div id="wsStatus" class="meta">WS: connecting...</div>
+            <div id="buildInfo" class="meta">Build: unknown</div>
+          </div>
           <div class="row">
-            <button data-event="media.source.load">Load</button>
-            <button data-event="media.play">Play</button>
-            <button data-event="media.pause">Pause</button>
-            <button data-event="media.stop">Stop</button>
+            <button id="refreshStateBtn">Refresh State</button>
+            <button id="reloadUiBtn">Reload Audi UI</button>
+            <button id="applyHomeDefaultsBtn">Apply Home Defaults</button>
+          </div>
+          <div class="row">
+            <button id="openUiBtn">Open Audi UI</button>
+            <button id="goHomeBtn">Go Home</button>
           </div>
         </div>
       </section>
 
       <section class="card">
-        <h2>Audio Controls</h2>
+        <h2>Safe Routes</h2>
+        <div id="routeButtons" class="pill-list"></div>
+      </section>
+
+      <section class="card">
+        <h2>Media</h2>
         <div class="grid">
-          <label class="small">Seek (sec)</label>
-          <input id="seekInput" type="number" min="0" step="1" value="10" />
-          <button id="seekBtn">Send Seek</button>
-          <label class="small">Volume (0-100)</label>
-          <input id="volumeInput" type="number" min="0" max="100" step="1" value="35" />
-          <button id="volumeBtn">Set Volume</button>
-          <button id="devicesBtn">List Audio Devices</button>
-          <button id="diagBtn">Audio Diagnostics</button>
+          <label class="small-label" for="sourceSelect">Source</label>
+          <select id="sourceSelect"></select>
+          <div class="row">
+            <button id="activateSourceBtn">Activate Source</button>
+            <button id="gotoSourceSelectionBtn">Show Source Selection</button>
+            <button id="gotoPlayerBtn">Show Player</button>
+          </div>
+          <label class="small-label" for="trackSelect">Track</label>
+          <select id="trackSelect"></select>
+          <div class="row">
+            <button id="loadTrackBtn">Load Track</button>
+            <button id="playBtn">Play</button>
+            <button id="pauseBtn">Pause</button>
+            <button id="stopBtn">Stop</button>
+          </div>
+          <div class="row">
+            <div>
+              <label class="small-label" for="seekInput">Seek (sec)</label>
+              <input id="seekInput" type="number" min="0" step="1" value="10" />
+            </div>
+            <div>
+              <label class="small-label" for="volumeInput">Volume (0-100)</label>
+              <input id="volumeInput" type="number" min="0" max="100" step="1" value="35" />
+            </div>
+          </div>
+          <div class="row">
+            <button id="seekBtn">Send Seek</button>
+            <button id="volumeBtn">Set Volume</button>
+            <button id="devicesBtn">List Devices</button>
+            <button id="diagBtn">Backend Diagnostics</button>
+          </div>
         </div>
       </section>
 
       <section class="card">
-        <h2>Simulator Events (Local Mock)</h2>
-        <div class="row">
-          <button data-sim="sim.session.start">Session Start</button>
-          <button data-sim="sim.session.stop">Session Stop</button>
-          <button data-sim="sim.user.entered">User Entered</button>
-          <button data-sim="sim.user.left">User Left</button>
-          <button data-sim="sim.ignition.on">Ignition On (sim)</button>
-          <button data-sim="sim.ignition.off">Ignition Off (sim)</button>
-          <button data-sim="sim.door.open">Door Open</button>
-          <button data-sim="sim.door.close">Door Close</button>
-          <button data-sim="sim.seat.occupied">Seat Occupied</button>
-          <button data-sim="sim.seat.empty">Seat Empty</button>
+        <h2>Users</h2>
+        <div class="grid">
+          <label class="small-label" for="userSelect">Available Users</label>
+          <select id="userSelect"></select>
+          <div class="row">
+            <button id="switchUserBtn">Switch User</button>
+            <button id="deleteUserBtn">Delete Selected User</button>
+            <button id="gotoUsersBtn">Open User Menu</button>
+          </div>
+          <label class="small-label" for="offlineUserNameInput">New Offline User</label>
+          <input id="offlineUserNameInput" type="text" placeholder="Offline User" />
+          <button id="addOfflineUserBtn">Add Offline User</button>
+          <label class="small-label" for="userActivitySelect">Safe User Activities</label>
+          <select id="userActivitySelect"></select>
+          <button id="runUserActivityBtn">Run Activity</button>
         </div>
-        <div class="small">These are emulator-only and not mapped to real vehicle functions.</div>
+      </section>
+
+      <section class="card">
+        <h2>Language</h2>
+        <div class="grid">
+          <label class="small-label" for="languageSelect">Language</label>
+          <select id="languageSelect"></select>
+          <div class="row">
+            <button id="applyLanguageBtn">Apply Language</button>
+            <button id="gotoLanguageBtn">Open Language Screen</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Sound</h2>
+        <div class="grid">
+          <div class="row">
+            <button id="muteOnBtn">Mute</button>
+            <button id="muteOffBtn">Unmute</button>
+            <button id="gotoSoundBtn">Open Sound Settings</button>
+            <button id="gotoBalanceBtn">Open Balance/Fader</button>
+          </div>
+          <label class="small-label" for="soundSettingSelect">Sound Setting</label>
+          <select id="soundSettingSelect"></select>
+          <div id="soundSettingValueNumericWrap">
+            <label class="small-label" for="soundSettingNumericInput">Value X</label>
+            <input id="soundSettingNumericInput" type="number" step="1" value="0" />
+          </div>
+          <div id="soundSettingValueDiscreteWrap">
+            <label class="small-label" for="soundSettingDiscreteSelect">Discrete Value</label>
+            <select id="soundSettingDiscreteSelect"></select>
+          </div>
+          <button id="applySoundSettingBtn">Apply Sound Setting</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Maintenance</h2>
+        <div class="grid">
+          <label class="small-label" for="maintenanceResetSelect">Reset Control</label>
+          <select id="maintenanceResetSelect"></select>
+          <div class="row">
+            <button id="triggerMaintenanceResetBtn">Trigger Reset</button>
+            <button id="gotoMaintenanceBtn">Open Maintenance</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Simulator</h2>
+        <div class="grid">
+          <div class="row">
+            <button data-sim="sim.session.start">Session Start</button>
+            <button data-sim="sim.session.stop">Session Stop</button>
+            <button data-sim="sim.user.entered">User Entered</button>
+            <button data-sim="sim.user.left">User Left</button>
+          </div>
+          <div class="row">
+            <button data-sim="sim.ignition.on">Ignition On (sim)</button>
+            <button data-sim="sim.ignition.off">Ignition Off (sim)</button>
+            <button data-sim="sim.door.open">Door Open</button>
+            <button data-sim="sim.door.close">Door Close</button>
+          </div>
+          <div class="row">
+            <button data-sim="sim.seat.occupied">Seat Occupied</button>
+            <button data-sim="sim.seat.empty">Seat Empty</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Blocked Domains</h2>
+        <div id="blockedDomains" class="pill-list"></div>
       </section>
 
       <section class="card">
@@ -133,28 +332,58 @@
       </section>
 
       <section class="card">
-        <h2>Simulator State</h2>
-        <pre id="simState">{}</pre>
+        <h2>User State</h2>
+        <pre id="userState">{}</pre>
       </section>
 
       <section class="card">
+        <h2>Sound State</h2>
+        <pre id="soundState">{}</pre>
+      </section>
+
+      <section class="card wide">
         <h2>Event Log</h2>
         <pre id="eventLog">[]</pre>
+      </section>
+
+      <section class="card wide">
+        <h2>Dev Snapshot</h2>
+        <pre id="devState">{}</pre>
       </section>
     </main>
 
     <script>
       const qs = (selector) => document.querySelector(selector);
       const audioStateEl = qs("#audioState");
-      const simStateEl = qs("#simState");
+      const userStateEl = qs("#userState");
+      const soundStateEl = qs("#soundState");
+      const devStateEl = qs("#devState");
       const eventLogEl = qs("#eventLog");
       const wsStatusEl = qs("#wsStatus");
-      const trackSelect = qs("#trackSelect");
+      const buildInfoEl = qs("#buildInfo");
+      const routeButtonsEl = qs("#routeButtons");
+      const blockedDomainsEl = qs("#blockedDomains");
+      const sourceSelectEl = qs("#sourceSelect");
+      const trackSelectEl = qs("#trackSelect");
+      const userSelectEl = qs("#userSelect");
+      const userActivitySelectEl = qs("#userActivitySelect");
+      const languageSelectEl = qs("#languageSelect");
+      const soundSettingSelectEl = qs("#soundSettingSelect");
+      const soundSettingNumericInputEl = qs("#soundSettingNumericInput");
+      const soundSettingDiscreteSelectEl = qs("#soundSettingDiscreteSelect");
+      const soundSettingNumericWrapEl = qs("#soundSettingValueNumericWrap");
+      const soundSettingDiscreteWrapEl = qs("#soundSettingValueDiscreteWrap");
+      const maintenanceResetSelectEl = qs("#maintenanceResetSelect");
       const logEntries = [];
+      let currentCatalog = null;
+      let currentState = null;
+      let ws = null;
 
       function pushLog(entry) {
         logEntries.unshift({ at: new Date().toISOString(), ...entry });
-        while (logEntries.length > 40) logEntries.pop();
+        while (logEntries.length > 60) {
+          logEntries.pop();
+        }
         eventLogEl.textContent = JSON.stringify(logEntries, null, 2);
       }
 
@@ -164,124 +393,354 @@
         return { ok: response.ok, status: response.status, body };
       }
 
-      async function loadTracks() {
-        const result = await httpJson("/api/media/library");
-        const tracks = (result.body && result.body.tracks) || [];
-        trackSelect.innerHTML = "";
-        if (!tracks.length) {
+      function populateSelect(selectEl, items, getValue, getLabel, selectedValue) {
+        const previous = selectedValue !== undefined ? selectedValue : selectEl.value;
+        selectEl.innerHTML = "";
+        const list = Array.isArray(items) ? items : [];
+        if (!list.length) {
           const option = document.createElement("option");
           option.value = "";
-          option.textContent = "No local tracks found";
-          trackSelect.append(option);
+          option.textContent = "No entries available";
+          selectEl.append(option);
           return;
         }
-        for (const track of tracks) {
+        for (const item of list) {
           const option = document.createElement("option");
-          option.value = track.id;
-          option.textContent = `${track.id}: ${track.title}`;
-          trackSelect.append(option);
+          option.value = String(getValue(item));
+          option.textContent = String(getLabel(item));
+          selectEl.append(option);
+        }
+        if (previous && list.some((item) => String(getValue(item)) === String(previous))) {
+          selectEl.value = String(previous);
         }
       }
 
-      async function refreshStates() {
-        const [audio, sim] = await Promise.all([
-          httpJson("/api/audio/state"),
-          httpJson("/api/sim/state"),
-        ]);
-        if (audio.body && audio.body.state) audioStateEl.textContent = JSON.stringify(audio.body.state, null, 2);
-        if (sim.body && sim.body.state) simStateEl.textContent = JSON.stringify(sim.body.state, null, 2);
+      function renderRouteButtons(routes) {
+        routeButtonsEl.innerHTML = "";
+        for (const route of Array.isArray(routes) ? routes : []) {
+          const button = document.createElement("button");
+          button.className = "route-button";
+          button.type = "button";
+          button.textContent = route.label;
+          button.title = route.sourceHint || route.hash;
+          button.addEventListener("click", () => sendCommand("ui.route.set", { hash: route.hash }));
+          routeButtonsEl.append(button);
+        }
       }
 
-      async function sendAudioEvent(type, payload) {
-        const result = await httpJson("/api/audio/event", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ type, payload }),
-        });
-        pushLog({ channel: "audio/http", type, result: result.body });
-        await refreshStates();
+      function renderBlockedDomains(domains) {
+        blockedDomainsEl.innerHTML = "";
+        for (const entry of Array.isArray(domains) ? domains : []) {
+          const item = document.createElement("div");
+          item.className = "pill blocked";
+          item.title = entry.reason || "Blocked";
+          item.textContent = entry.label;
+          blockedDomainsEl.append(item);
+        }
       }
 
-      async function sendSimEvent(type, payload = {}) {
-        const result = await httpJson("/api/sim/event", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ type, payload }),
-        });
-        pushLog({ channel: "sim/http", type, result: result.body });
-        await refreshStates();
-      }
-
-      for (const button of document.querySelectorAll("button[data-event]")) {
-        button.addEventListener("click", async () => {
-          const type = button.getAttribute("data-event");
-          const selectedTrackId = trackSelect.value;
-          const payload = {};
-          if (type === "media.source.load" || type === "media.play") {
-            if (selectedTrackId) payload.id = selectedTrackId;
-          }
-          await sendAudioEvent(type, payload);
-        });
-      }
-
-      for (const button of document.querySelectorAll("button[data-sim]")) {
-        button.addEventListener("click", () => sendSimEvent(button.getAttribute("data-sim")));
-      }
-
-      qs("#seekBtn").addEventListener("click", async () => {
-        const value = Number(qs("#seekInput").value);
-        await sendAudioEvent("media.seek", { positionSec: value });
-      });
-
-      qs("#volumeBtn").addEventListener("click", async () => {
-        const value = Number(qs("#volumeInput").value);
-        await sendAudioEvent("media.volume.set", { volume: value });
-      });
-
-      qs("#devicesBtn").addEventListener("click", async () => {
-        await sendAudioEvent("audio.device.list", {});
-      });
-
-      qs("#diagBtn").addEventListener("click", async () => {
-        const result = await httpJson("/api/audio/diagnostics");
-        pushLog({ channel: "audio/http", type: "audio.backend.diagnostics", result: result.body });
-        await refreshStates();
-      });
-
-      qs("#refreshStateBtn").addEventListener("click", refreshStates);
-
-      const wsProto = location.protocol === "https:" ? "wss" : "ws";
-      const ws = new WebSocket(`${wsProto}://${location.host}/dev/ws`);
-      ws.addEventListener("open", () => {
-        wsStatusEl.textContent = "WS: connected";
-        wsStatusEl.className = "small status-ok";
-      });
-      ws.addEventListener("error", () => {
-        wsStatusEl.textContent = "WS: error";
-        wsStatusEl.className = "small status-err";
-      });
-      ws.addEventListener("close", () => {
-        wsStatusEl.textContent = "WS: disconnected";
-        wsStatusEl.className = "small status-err";
-      });
-      ws.addEventListener("message", (event) => {
-        let parsed;
-        try {
-          parsed = JSON.parse(event.data);
-        } catch {
+      function updateSoundSettingControls() {
+        if (!currentState || !currentState.sound || !Array.isArray(currentState.sound.settings)) {
           return;
         }
-        if (parsed.type === "audio.state.changed") {
-          audioStateEl.textContent = JSON.stringify(parsed.payload, null, 2);
-        } else if (parsed.type === "sim.state.changed") {
-          simStateEl.textContent = JSON.stringify(parsed.payload, null, 2);
+        const selectedId = soundSettingSelectEl.value;
+        const selectedSetting = currentState.sound.settings.find((entry) => String(entry.id) === String(selectedId));
+        if (!selectedSetting) {
+          soundSettingNumericWrapEl.style.display = "block";
+          soundSettingDiscreteWrapEl.style.display = "none";
+          return;
         }
-        if (parsed.type && parsed.type.endsWith(".result")) {
-          pushLog({ channel: "ws", type: parsed.type, payload: parsed.payload });
+        if (selectedSetting.nature === "INTERVAL_1D") {
+          soundSettingNumericWrapEl.style.display = "block";
+          soundSettingDiscreteWrapEl.style.display = "none";
+          soundSettingNumericInputEl.min = selectedSetting.minValueX;
+          soundSettingNumericInputEl.max = selectedSetting.maxValueX;
+          soundSettingNumericInputEl.value = selectedSetting.valueX;
+          return;
         }
+        soundSettingNumericWrapEl.style.display = "none";
+        soundSettingDiscreteWrapEl.style.display = "block";
+        populateSelect(
+          soundSettingDiscreteSelectEl,
+          selectedSetting.possibleDiscreteValues || [],
+          (value) => value,
+          (value) => value,
+          selectedSetting.discreteValue,
+        );
+      }
+
+      function applyState(state) {
+        if (!state || typeof state !== "object") {
+          return;
+        }
+        currentState = state;
+        buildInfoEl.textContent = `Build: ${state.build || "unknown"}`;
+        audioStateEl.textContent = JSON.stringify(state.audio || {}, null, 2);
+        userStateEl.textContent = JSON.stringify(state.usermanagement || {}, null, 2);
+        soundStateEl.textContent = JSON.stringify(state.sound || {}, null, 2);
+        devStateEl.textContent = JSON.stringify(state, null, 2);
+
+        const activeSourceId = state.media && state.media.activeSourceId ? String(state.media.activeSourceId) : "";
+        populateSelect(
+          sourceSelectEl,
+          state.entertainment && state.entertainment.sources,
+          (entry) => entry.id,
+          (entry) => `${entry.name} [${entry.type}]`,
+          activeSourceId,
+        );
+        populateSelect(
+          trackSelectEl,
+          state.media && state.media.library,
+          (entry) => entry.id,
+          (entry) => `${entry.id}: ${entry.title}`,
+        );
+        const activeUser =
+          state.usermanagement &&
+          Array.isArray(state.usermanagement.settings) &&
+          state.usermanagement.settings[0] &&
+          state.usermanagement.settings[0].activeUser
+            ? state.usermanagement.settings[0].activeUser.id
+            : "";
+        populateSelect(
+          userSelectEl,
+          state.usermanagement && state.usermanagement.users,
+          (entry) => entry.id,
+          (entry) => `${entry.name} [${entry.role}]`,
+          activeUser,
+        );
+        populateSelect(
+          userActivitySelectEl,
+          currentCatalog && currentCatalog.userActivities,
+          (entry) => entry.name,
+          (entry) => entry.name,
+        );
+        const currentLanguage =
+          state.language && Array.isArray(state.language.systems) && state.language.systems[0]
+            ? state.language.systems[0].currentSystemLanguage
+            : "";
+        populateSelect(
+          languageSelectEl,
+          currentCatalog && currentCatalog.languages,
+          (entry) => entry.language,
+          (entry) => `${entry.label} [${entry.language}]`,
+          currentLanguage,
+        );
+        populateSelect(
+          soundSettingSelectEl,
+          state.sound && state.sound.settings,
+          (entry) => entry.id,
+          (entry) => `${entry.purpose} [${entry.nature}]`,
+        );
+        populateSelect(
+          maintenanceResetSelectEl,
+          state.maintenance && state.maintenance.resetControls,
+          (entry) => entry.id,
+          (entry) => `${entry.name} (${entry.resetControl})`,
+        );
+        if (state.audio && typeof state.audio.volume === "number") {
+          qs("#volumeInput").value = state.audio.volume;
+        }
+        updateSoundSettingControls();
+      }
+
+      function applyCatalog(catalog) {
+        if (!catalog || typeof catalog !== "object") {
+          return;
+        }
+        currentCatalog = catalog;
+        renderRouteButtons(catalog.routes || []);
+        renderBlockedDomains(catalog.blockedDomains || []);
+        if (currentState) {
+          applyState(currentState);
+        }
+      }
+
+      async function refreshCatalog() {
+        const result = await httpJson("/api/dev/catalog");
+        if (result.body && result.body.catalog) {
+          applyCatalog(result.body.catalog);
+        }
+      }
+
+      async function refreshState() {
+        const result = await httpJson("/api/dev/state");
+        if (result.body && result.body.state) {
+          applyState(result.body.state);
+        }
+      }
+
+      async function sendCommand(type, payload = {}) {
+        const result = await httpJson("/api/dev/command", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ type, payload }),
+        });
+        pushLog({ channel: "dev/http", type, result: result.body });
+        if (result.body && result.body.state) {
+          applyState(result.body.state);
+        } else {
+          await refreshState();
+        }
+        return result.body;
+      }
+
+      function connectWs() {
+        const wsProto = location.protocol === "https:" ? "wss" : "ws";
+        ws = new WebSocket(`${wsProto}://${location.host}/dev/ws`);
+        ws.addEventListener("open", () => {
+          wsStatusEl.textContent = "WS: connected";
+          wsStatusEl.className = "meta status-ok";
+        });
+        ws.addEventListener("close", () => {
+          wsStatusEl.textContent = "WS: disconnected";
+          wsStatusEl.className = "meta status-err";
+          window.setTimeout(connectWs, 1500);
+        });
+        ws.addEventListener("error", () => {
+          wsStatusEl.textContent = "WS: error";
+          wsStatusEl.className = "meta status-err";
+        });
+        ws.addEventListener("message", (event) => {
+          let parsed;
+          try {
+            parsed = JSON.parse(event.data);
+          } catch {
+            return;
+          }
+          if (!parsed || typeof parsed !== "object") {
+            return;
+          }
+          if (parsed.type === "dev.catalog") {
+            applyCatalog(parsed.payload);
+            return;
+          }
+          if (parsed.type === "dev.state.changed") {
+            applyState(parsed.payload);
+            return;
+          }
+          if (parsed.type === "audio.state.changed" && currentState) {
+            applyState({ ...currentState, audio: parsed.payload });
+            return;
+          }
+          if (parsed.type === "sim.state.changed" && currentState) {
+            applyState({ ...currentState, simulator: parsed.payload });
+            return;
+          }
+          if (parsed.type === "dev.command.result") {
+            pushLog({ channel: "dev/ws", type: parsed.type, result: parsed.payload });
+            if (parsed.payload && parsed.payload.state) {
+              applyState(parsed.payload.state);
+            }
+            return;
+          }
+          if (parsed.type && parsed.type.endsWith(".result")) {
+            pushLog({ channel: "ws", type: parsed.type, result: parsed.payload });
+          }
+        });
+      }
+
+      qs("#refreshStateBtn").addEventListener("click", refreshState);
+      qs("#reloadUiBtn").addEventListener("click", () => sendCommand("ui.reload"));
+      qs("#applyHomeDefaultsBtn").addEventListener("click", () => sendCommand("ui.home.defaults.apply"));
+      qs("#goHomeBtn").addEventListener("click", () => sendCommand("ui.route.set", { hash: "#/main" }));
+      qs("#openUiBtn").addEventListener("click", () => {
+        const uiOrigin = (currentCatalog && currentCatalog.uiOrigin) || (currentState && currentState.uiOrigin) || "http://127.0.0.1:5501";
+        window.open(uiOrigin, "_blank", "noopener,noreferrer");
       });
 
-      loadTracks().then(refreshStates);
+      qs("#gotoSourceSelectionBtn").addEventListener("click", () =>
+        sendCommand("ui.route.set", { hash: "#/main/media/source-selection" }),
+      );
+      qs("#gotoPlayerBtn").addEventListener("click", () =>
+        sendCommand("ui.route.set", { hash: "#/main/media/player" }),
+      );
+      qs("#activateSourceBtn").addEventListener("click", () =>
+        sendCommand("media.source.select", { sourceId: sourceSelectEl.value }),
+      );
+      qs("#loadTrackBtn").addEventListener("click", () =>
+        sendCommand("media.track.load", { id: trackSelectEl.value }),
+      );
+      qs("#playBtn").addEventListener("click", () =>
+        sendCommand("media.play", { id: trackSelectEl.value }),
+      );
+      qs("#pauseBtn").addEventListener("click", () => sendCommand("media.pause"));
+      qs("#stopBtn").addEventListener("click", () => sendCommand("media.stop"));
+      qs("#seekBtn").addEventListener("click", () =>
+        sendCommand("media.seek", { positionSec: Number(qs("#seekInput").value) }),
+      );
+      qs("#volumeBtn").addEventListener("click", () =>
+        sendCommand("sound.volume.set", { value: Number(qs("#volumeInput").value) }),
+      );
+      qs("#devicesBtn").addEventListener("click", () => sendCommand("audio.device.list"));
+      qs("#diagBtn").addEventListener("click", () => sendCommand("audio.backend.diagnostics"));
+
+      qs("#gotoUsersBtn").addEventListener("click", () =>
+        sendCommand("ui.route.set", { hash: "#/main/users/user-account-list" }),
+      );
+      qs("#switchUserBtn").addEventListener("click", () =>
+        sendCommand("user.switch", { userId: userSelectEl.value }),
+      );
+      qs("#deleteUserBtn").addEventListener("click", () =>
+        sendCommand("user.delete", { userId: userSelectEl.value }),
+      );
+      qs("#addOfflineUserBtn").addEventListener("click", () =>
+        sendCommand("user.add.offline", { name: qs("#offlineUserNameInput").value.trim() || "Offline User" }),
+      );
+      qs("#runUserActivityBtn").addEventListener("click", () =>
+        sendCommand("user.activity.run", {
+          activityName: userActivitySelectEl.value,
+          userId: userSelectEl.value,
+        }),
+      );
+
+      qs("#gotoLanguageBtn").addEventListener("click", () =>
+        sendCommand("ui.route.set", { hash: "#/main/settings/language-selection" }),
+      );
+      qs("#applyLanguageBtn").addEventListener("click", () =>
+        sendCommand("language.set", { language: languageSelectEl.value }),
+      );
+
+      qs("#gotoSoundBtn").addEventListener("click", () =>
+        sendCommand("ui.route.set", { hash: "#/main/settings/sound" }),
+      );
+      qs("#gotoBalanceBtn").addEventListener("click", () =>
+        sendCommand("ui.route.set", { hash: "#/main/settings/sound/sound-balance-fader" }),
+      );
+      qs("#muteOnBtn").addEventListener("click", () => sendCommand("sound.mute.set", { muted: true }));
+      qs("#muteOffBtn").addEventListener("click", () => sendCommand("sound.mute.set", { muted: false }));
+      soundSettingSelectEl.addEventListener("change", updateSoundSettingControls);
+      qs("#applySoundSettingBtn").addEventListener("click", () => {
+        const selectedId = soundSettingSelectEl.value;
+        const setting =
+          currentState && currentState.sound && Array.isArray(currentState.sound.settings)
+            ? currentState.sound.settings.find((entry) => String(entry.id) === String(selectedId))
+            : null;
+        if (!setting) {
+          return;
+        }
+        const payload = { id: selectedId };
+        if (setting.nature === "INTERVAL_1D") {
+          payload.valueX = Number(soundSettingNumericInputEl.value);
+        } else {
+          payload.discreteValue = soundSettingDiscreteSelectEl.value;
+        }
+        sendCommand("sound.setting.set", payload);
+      });
+
+      qs("#gotoMaintenanceBtn").addEventListener("click", () =>
+        sendCommand("ui.route.set", { hash: "#/main/settings/maintenance" }),
+      );
+      qs("#triggerMaintenanceResetBtn").addEventListener("click", () =>
+        sendCommand("maintenance.reset.trigger", { id: maintenanceResetSelectEl.value }),
+      );
+
+      document.querySelectorAll("button[data-sim]").forEach((button) => {
+        button.addEventListener("click", () =>
+          sendCommand("sim.event", { type: button.getAttribute("data-sim") }),
+        );
+      });
+
+      Promise.all([refreshCatalog(), refreshState()]).finally(connectWs);
     </script>
   </body>
 </html>

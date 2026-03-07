@@ -1,0 +1,94 @@
+[boot] Build: 2026-03-07-usermenu-audio-r3
+[boot] Mode: api-only
+[boot] Dev control UI: http://127.0.0.1:14713/dev/
+[boot] Server listening on http://127.0.0.1:14713
+[boot] DEV_CORS=true
+[audio] backend=mpv available=true mode=stopped
+[ws] connect path=/ defaultService=/registry canonical=/registry
+[ws] connect path=/ defaultService=/registry canonical=/registry
+[http] GET /api/health -> 200 (1.5 ms)
+[ws] connect path=/targets defaultService=/targets canonical=/entertainmentcontrol
+[http] GET /etc/eso/rudi.json -> 200 (3.5 ms)
+[ws] close path=/targets code=1006 reason=
+[ws] connect path=/childlocks defaultService=/childlocks canonical=/media
+[ws] connect path=/activities defaultService=/activities canonical=/usermanagement
+[ws] close path=/childlocks code=1006 reason=
+[ws] close path=/activities code=1006 reason=
+[ws] connect path=/layerconfig defaultService=/layerconfig canonical=/mcpdisplaymanager
+[ws] connect path=/displays defaultService=/displays canonical=/mcpdisplaymanager
+[ws] connect path=/persistenceentries defaultService=/persistenceentries canonical=/system
+[ws] connect path=/settings defaultService=/settings canonical=/settings
+[ws] close path=/layerconfig code=1006 reason=
+[ws] close path=/persistenceentries code=1006 reason=
+[ws] close path=/displays code=1006 reason=
+[ws] close path=/settings code=1006 reason=
+[ws] connect path=/usermanagement defaultService=/usermanagement canonical=/usermanagement
+[ws] close path=/usermanagement code=1006 reason=
+[ws] close path=/ code=1006 reason=
+[ws] close path=/ code=1001 reason=
+[http] GET //etc/eso/rudi.json -> 200 (3.0 ms)
+[http] GET //etc/eso/rudi.json -> 200 (3.4 ms)
+[ws] connect path=/ defaultService=/registry canonical=/registry
+[ws] connect path=/ defaultService=/registry canonical=/registry
+[http] GET /api/health -> 200 (1.4 ms)
+[http] GET /api/health -> 200 (2.4 ms)
+[http] GET /etc/eso/rudi.json -> 200 (3.5 ms)
+[http] GET /etc/eso/tracing.json -> 200 (0.6 ms)
+[http] GET /api/health -> 200 (2.2 ms)
+[http] GET /api/health -> 200 (0.3 ms)
+[http] GET /etc/eso/rudi.json -> 200 (2.9 ms)
+[http] GET /etc/eso/tracing.json -> 200 (0.4 ms)
+[ws] close path=/ code=1006 reason=
+[ws] connect path=/registry defaultService=/registry canonical=/registry
+[ws] close path=/registry code=1005 reason=
+[ws] connect path=/registry defaultService=/registry canonical=/registry
+[ws] close path=/registry code=1005 reason=
+[ws] connect path=/registry defaultService=/registry canonical=/registry
+[ws] close path=/registry code=1005 reason=
+[ws] connect path=/registry defaultService=/registry canonical=/registry
+[ws] close path=/registry code=1005 reason=
+[ws] connect path=/registry defaultService=/registry canonical=/registry
+[ws] close path=/registry code=1005 reason=
+[ws] connect path=/registry defaultService=/registry canonical=/registry
+[ws] close path=/registry code=1005 reason=
+[ws] connect path=/registry defaultService=/registry canonical=/registry
+[ws] connect path=/registry defaultService=/registry canonical=/registry
+[ws] close path=/registry code=1005 reason=
+[ws] connect path=/registry defaultService=/registry canonical=/registry
+[ws] close path=/registry code=1005 reason=
+[ws] connect path=/registry defaultService=/registry canonical=/registry
+[ws] close path=/registry code=1005 reason=
+[ws] connect path=/registry defaultService=/registry canonical=/registry
+[ws] close path=/registry code=1005 reason=
+[ws] connect path=/registry defaultService=/registry canonical=/registry
+[ws] close path=/registry code=1005 reason=
+[ws] connect path=/targets defaultService=/targets canonical=/entertainmentcontrol
+[ws] close path=/registry code=1005 reason=
+[ws] close path=/targets code=1005 reason=
+[ws] connect path=/childlocks defaultService=/childlocks canonical=/media
+[ws] connect path=/usermanagement defaultService=/usermanagement canonical=/usermanagement
+[ws] close path=/childlocks code=1005 reason=
+[ws] close path=/usermanagement code=1005 reason=
+[ws] connect path=/targets defaultService=/targets canonical=/entertainmentcontrol
+[ws] connect path=/MCP_Displaymanager defaultService=/MCP_Displaymanager canonical=/mcpdisplaymanager
+[ws] close path=/targets code=1005 reason=
+[ws] connect path=/usermanagement defaultService=/usermanagement canonical=/usermanagement
+[ws] close path=/MCP_Displaymanager code=1005 reason=
+[ws] connect path=/registry defaultService=/registry canonical=/registry
+[ws] close path=/usermanagement code=1005 reason=
+[ws] close path=/registry code=1005 reason=
+[http] GET /api/health -> 200 (1.3 ms)
+[ws] connect path=/targets defaultService=/targets canonical=/entertainmentcontrol
+[ws] connect path=/MCP_Displaymanager defaultService=/MCP_Displaymanager canonical=/mcpdisplaymanager
+[ws] close path=/targets code=1005 reason=
+[ws] connect path=/registry defaultService=/registry canonical=/registry
+[ws] close path=/MCP_Displaymanager code=1005 reason=
+[ws] close path=/registry code=1005 reason=
+[ws] connect path=/registry defaultService=/registry canonical=/registry
+[ws] close path=/registry code=1005 reason=
+[ws] connect path=/childlocks defaultService=/childlocks canonical=/media
+[ws] close path=/childlocks code=1005 reason=
+[ws] connect path=/media defaultService=/media canonical=/media
+[ws] close path=/media code=1005 reason=
+[ws] connect path=/childlocks defaultService=/childlocks canonical=/media
+[ws] close path=/childlocks code=1006 reason=

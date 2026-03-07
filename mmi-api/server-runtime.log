@@ -1,0 +1,17 @@
+[boot] Build: 2026-03-07-home-r10
+[boot] Mode: api-only
+[boot] Dev control UI: http://127.0.0.1:14713/dev/
+[boot] Server listening on http://127.0.0.1:14713
+[boot] DEV_CORS=true
+[audio] backend=mpv available=true mode=stopped
+[http] GET /api/health -> 200 (1.9 ms)
+[http] GET /persistenceentries -> 404 (0.6 ms)
+[http] GET /api/dev/state -> 200 (1.7 ms)
+[http] GET /api/health -> 200 (0.3 ms)
+[http] GET /api/health -> 200 (0.4 ms)
+[ws] connect path=/dev/ws defaultService=/registry canonical=/registry
+[http] GET //etc/eso/rudi.json -> 200 (1.0 ms)
+[ws] connect path=/ defaultService=/registry canonical=/registry
+[http] GET /api/health -> 200 (2.1 ms)
+[http] GET /api/health -> 200 (1.2 ms)
+[http] GET /api/health -> 200 (1.7 ms)

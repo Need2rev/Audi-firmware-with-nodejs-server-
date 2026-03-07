@@ -1,0 +1,8 @@
+[boot] Build: 2026-03-07-usermenu-audio-r3
+[boot] Mode: api-only
+[boot] Dev control UI: http://127.0.0.1:14995/dev/
+[boot] Server listening on http://127.0.0.1:14995
+[boot] DEV_CORS=true
+[audio] backend=mpv available=true mode=stopped
+[ws] connect path=/ defaultService=/registry canonical=/registry
+[ws] close path=/ code=1005 reason=

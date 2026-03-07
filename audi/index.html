@@ -36,6 +36,220 @@
 
     recoverUiOnReload();
 
+    window.__AUDI_EMULATOR_ALL_HOME_APPS__ = true;
+
+    (function seedEmulatorLocalStorage() {
+      const emulatorProfileVersion = '2026-03-07-r5-home';
+      const storageVersionKey = '__audi_emulator_profile_version__';
+      const storedVersion = window.localStorage.getItem(storageVersionKey);
+      if (storedVersion === emulatorProfileVersion) {
+        return;
+      }
+
+      function nativeTile(id, path, index, extraApp = {}) {
+        return {
+          app: {
+            id,
+            path,
+            type: 0,
+            appC_type: 0,
+            ...extraApp,
+          },
+          index,
+          personalized: true,
+        };
+      }
+
+      const directAccessTiles = [
+        nativeTile('native-radio', '/radio', 0),
+        nativeTile('native-media', '/media', 1),
+        nativeTile('native-phone', '/phone', 2),
+        nativeTile('native-navi', '/navi', 3, { systemComponentName: 'navi' }),
+      ];
+
+      const homeScreenTiles = [
+        nativeTile('native-radio', '/radio', 0),
+        nativeTile('native-media', '/media', 1),
+        nativeTile('native-phone', '/phone', 2),
+        nativeTile('native-navi', '/navi', 3, { systemComponentName: 'navi' }),
+        nativeTile('native-smart-phone-apps', 'asi/video-stream', 4),
+        nativeTile('native-car', '/car', 5),
+        nativeTile('native-favorites', '/favorites', 6),
+        nativeTile('native-settings', '/settings', 7),
+        nativeTile('native-breakdowncall', '/help', 8),
+        nativeTile('native-help', '/help', 9),
+        nativeTile('native-users', '/users', 10),
+        nativeTile('native-messaging', '/messaging', 11),
+        nativeTile('native-poicall', '/navi', 12),
+      ];
+
+      const defaults = new Map([
+        ['center.general.last-mode', JSON.stringify(['main', 'home'])],
+        ['center.general.last-mode-homescreen', JSON.stringify('dashboard')],
+        ['center.general.dashboard-tile-config', JSON.stringify({ start: 'multi-media', center: 'phone', end: 'navi' })],
+        ['center.general.direct-access', JSON.stringify(directAccessTiles)],
+        ['center.general.home-screen', JSON.stringify(homeScreenTiles)],
+        ['center.license.LicenseAsiTileAvailable', JSON.stringify(true)],
+        ['center.car.FASProfileAvailable', JSON.stringify(false)],
+      ]);
+
+      defaults.forEach((value, key) => {
+        window.localStorage.setItem(key, value);
+      });
+      window.localStorage.setItem(storageVersionKey, emulatorProfileVersion);
+    })();
+
+    (function recoverWhenBackendComesOnline() {
+      const backendHost = window.localStorage.getItem('__audi_emulator_backend__') ||
+        ((window.location.hostname || '127.0.0.1') + ':14713');
+      const backendBaseUrl = 'http://' + backendHost;
+      const sessionKey = '__audi_emulator_backend_sync_reload__';
+      const reloadVersion = '2026-03-07-r10';
+
+      function probeBackend() {
+        return window.fetch(backendBaseUrl + '/api/health', {
+          cache: 'no-store',
+          mode: 'cors',
+        }).then((response) => {
+          if (!response.ok) {
+            throw new Error('backend health probe failed');
+          }
+          return response.json();
+        });
+      }
+
+      probeBackend().catch(() => {
+        let pollCount = 0;
+        const poll = function () {
+          probeBackend()
+            .then(() => {
+              if (window.sessionStorage.getItem(sessionKey) === reloadVersion) {
+                return;
+              }
+              window.sessionStorage.setItem(sessionKey, reloadVersion);
+              window.location.reload();
+            })
+            .catch(() => {
+              pollCount += 1;
+              if (pollCount < 240) {
+                window.setTimeout(poll, 1500);
+              }
+            });
+        };
+        window.setTimeout(poll, 1500);
+      });
+    })();
+
+    (function startEmulatorDevBridge() {
+      const backendHost = window.localStorage.getItem('__audi_emulator_backend__') ||
+        ((window.location.hostname || '127.0.0.1') + ':14713');
+      const backendProtocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
+      const wsUrl = backendProtocol + '://' + backendHost + '/dev/ws';
+      let reconnectTimer = null;
+
+      function applyStorageEntries(entries) {
+        if (!entries || typeof entries !== 'object') {
+          return;
+        }
+        Object.keys(entries).forEach((key) => {
+          window.localStorage.setItem(String(key), String(entries[key]));
+        });
+      }
+
+      function handleBridgeMessage(event) {
+        let parsed;
+        try {
+          parsed = JSON.parse(event.data);
+        } catch {
+          return;
+        }
+        if (!parsed || typeof parsed !== 'object') {
+          return;
+        }
+        if (parsed.type === 'ui.route.set' && parsed.payload && typeof parsed.payload.hash === 'string') {
+          const nextHash = parsed.payload.hash;
+          if (nextHash && window.location.hash !== nextHash) {
+            window.location.hash = nextHash;
+          }
+          return;
+        }
+        if (parsed.type === 'ui.reload') {
+          window.location.reload();
+          return;
+        }
+        if (parsed.type === 'ui.localStorage.seed' && parsed.payload) {
+          applyStorageEntries(parsed.payload.entries);
+        }
+      }
+
+      function connect() {
+        let socket;
+        try {
+          socket = new WebSocket(wsUrl);
+        } catch {
+          reconnectTimer = window.setTimeout(connect, 1500);
+          return;
+        }
+        socket.addEventListener('message', handleBridgeMessage);
+        socket.addEventListener('close', () => {
+          reconnectTimer = window.setTimeout(connect, 1500);
+        });
+        socket.addEventListener('error', () => {
+          try {
+            socket.close();
+          } catch {}
+        });
+      }
+
+      if (reconnectTimer !== null) {
+        window.clearTimeout(reconnectTimer);
+      }
+      connect();
+    })();
+
+    // The extracted UI expects a dev/runtime environment that exposes gc().
+    // In the emulator we provide a harmless no-op to avoid startup noise.
+    if (typeof window.gc !== 'function') {
+      window.gc = function () {};
+    }
+
+    // Filter a few known emulator-only startup messages so the console stays usable.
+    const suppressedConsolePatterns = [
+      /TtStaticIfDirective#truthiness of condition changed dynamically/,
+      /mcp\.ComboGestureService#not supported by your browser/,
+      /AnimationService#Event FadeInScreenDone has not been emitted after 1000ms/,
+      /main\.CarShortcutsService#setupShortCutObservables INVALID should not be provided/,
+      /main\.NotificationsService#removeAllNotificationsForType: removed notification types were not active/,
+    ];
+
+    function shouldSuppressConsoleEntry(args) {
+      const text = args
+        .map((arg) => {
+          if (typeof arg === 'string') {
+            return arg;
+          }
+          if (arg instanceof Error) {
+            return arg.message || String(arg);
+          }
+          if (arg && typeof arg.message === 'string') {
+            return arg.message;
+          }
+          return '';
+        })
+        .join(' ');
+      return suppressedConsolePatterns.some((pattern) => pattern.test(text));
+    }
+
+    ['error', 'warn'].forEach((methodName) => {
+      const original = console[methodName];
+      console[methodName] = function (...args) {
+        if (shouldSuppressConsoleEntry(args)) {
+          return;
+        }
+        return original.apply(this, args);
+      };
+    });
+
     // Remember time of ui start for startup measurements.
     // Can be looked up in the blue engineering menu for example.
     window.uiStartTime = performance.now();

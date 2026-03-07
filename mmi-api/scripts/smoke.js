@@ -1,6 +1,7 @@
 const endpoints = [
   "http://127.0.0.1:14713/api/health",
-  "http://127.0.0.1:14713/",
+  "http://127.0.0.1:14713/etc/eso/rudi.json",
+  "http://127.0.0.1:14713/etc/eso/tracing.json",
 ];
 
 async function run() {
